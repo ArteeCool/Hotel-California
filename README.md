@@ -1,6 +1,7 @@
 # Hotel-California
 Hotel management application
 by ArteeCool
+Cringe
 
 1. Назва застосунку - HotelBooking
 2. Мета - Система для користування готелями, як для адміністраторів,так і для користувачів.
