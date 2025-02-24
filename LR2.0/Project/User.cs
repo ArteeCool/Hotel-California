@@ -6,15 +6,30 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    public class User
+    public abstract class User // Абстрактний клас
     {
-        private string _name;
-        private int _age;
+        private string _name = "not_exist"; // Приватні змінні
+        private int _age = 0;
 
-        public User(string name, int age)
+        public void SetName(string name) { this._name = name; } // Далі йдуть setters та getters
+        public string GetName() { return this._name; }
+
+        public void SetAge(int age) { this._age = age; }
+        public int GetAge() { return this._age; }
+
+
+        public User() { } // Конструктор за замовчуванням 
+        public  User(string name, int age) // Конструктор з параметрами
         {
-            this._name = name;
-            this._age = age;
+            SetName(name);
+            SetAge(age);
         }
+
+        public override string ToString()
+        {
+            return $"Your name is {GetName}\nYour age is {GetAge()}";
+        }
+
+        public abstract void SaySomething(); // Абстрактний клас
     }
 }
