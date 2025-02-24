@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LR2
+namespace Project
 {
-    public abstract class User
+    public class User
     {
         private string _name;
         private int _age;
@@ -16,6 +16,5 @@ namespace LR2
             this._name = name;
             this._age = age;
         }
-
     }
 }

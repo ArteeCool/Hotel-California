@@ -1,0 +1,10 @@
+.vs/
+*.suo
+*.user
+*.db
+*.opendb
+bin/
+obj/
+Debug/
+Release/
+*.log
