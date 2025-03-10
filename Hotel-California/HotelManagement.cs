@@ -7,6 +7,7 @@ namespace Hotel_Management
         private String _pathToFile = "rooms.json";
         private List<Room> _rooms = [];
         private Int32 _selectedRoom;
+        private bool _isEditing = false;
 
         public void SaveRoomsToFile(List<Room> rooms, String filePath)
         {
@@ -58,10 +59,22 @@ namespace Hotel_Management
 
         private void AddRoom_Click(object sender, EventArgs e)
         {
-            _rooms.Add(GetRoomInput());
-            ClearTextEntries();
-            FillRooms();
-            SaveRoomsToFile(_rooms, _pathToFile);
+            if (_isEditing)
+            {
+                _rooms[_selectedRoom] = GetRoomInput();
+                ClearTextEntries();
+                FillRooms();
+                SaveRoomsToFile(_rooms, _pathToFile);
+                _isEditing = false;
+                AddRoom.Text = "Add";
+            }
+            else
+            {
+                _rooms.Add(GetRoomInput());
+                ClearTextEntries();
+                FillRooms();
+                SaveRoomsToFile(_rooms, _pathToFile);
+            }
         }
 
         private void ClearTextEntries()
@@ -118,8 +131,9 @@ namespace Hotel_Management
 
         private void dataGridView1_CellContentClick(Object sender, DataGridViewCellEventArgs e)
         {
+
         }
-        
+
         private void dataGridView1_CellClick(Object? sender, DataGridViewCellEventArgs e)
         {
             _selectedRoom = e.RowIndex;
@@ -129,12 +143,23 @@ namespace Hotel_Management
         {
             if (_rooms.Count <= 0) return;
             if (_selectedRoom < 0 || _selectedRoom >= _rooms.Count) return;
-            
+
             if (!_rooms.Remove(_rooms[_selectedRoom])) return;
-            
-            
+
+
             FillRooms();
             SaveRoomsToFile(_rooms, _pathToFile);
+        }
+
+        // Edit
+        private void button3_Click(object sender, EventArgs e)
+        {
+            _isEditing = true;
+            AddRoom.Text = "Save";
+            roomNumber.Text = _rooms[_selectedRoom].RoomNumber.ToString();
+            roomsCount.Text = _rooms[_selectedRoom].RoomsCount.ToString();
+            roomCost.Text = _rooms[_selectedRoom].RoomCost.ToString();
+            textBox1.Text = _rooms[_selectedRoom].RoomPublisher.ToString();
         }
     }
 }
