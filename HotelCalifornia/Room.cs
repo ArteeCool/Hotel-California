@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace Hotel_Management
+namespace HotelCalifornia
 {
-    public class Room
+    public class Room : IEntity
     {
         public Int32 RoomNumber { get; set; }
         public Int32 RoomsCount { get; set; }
         public Int32 RoomCost { get; set; }
         public String RoomPublisher { get; set; }
+        public Int32 Id { get; set; }
 
         [JsonConstructor]
-        public Room(Int32 roomNumber, Int32 roomsCount, Int32 roomCost, String roomPublisher)
+        public Room(int roomNumber, int roomsCount, int roomCost, string roomPublisher)
         {
             RoomNumber = roomNumber;
             RoomsCount = roomsCount;
@@ -24,3 +20,4 @@ namespace Hotel_Management
         }
     }
 }
+
