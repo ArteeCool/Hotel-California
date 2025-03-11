@@ -4,6 +4,9 @@ namespace HotelCalifornia;
 
 public partial class Form1 : Form
 {
+
+
+
     public Form1()
     {
         InitializeComponent();
@@ -12,10 +15,14 @@ public partial class Form1 : Form
 
         Repository<Room> roomRepo = new();
 
+
+
         Room room1 = new Room(1, 2, 100, "John Smith");
         Room room2 = new Room(2, 3, 150, "Jenifer Lawrence");
+        Room room3 = new Room(3, 1, 200, "John Doe");
         roomRepo.Create(room1);
         roomRepo.Create(room2);
+        roomRepo.Create(room3);
 
         Console.WriteLine("Rooms:");
         foreach (var room in roomRepo.Read())
