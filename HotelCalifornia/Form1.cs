@@ -4,12 +4,6 @@ namespace HotelCalifornia;
 
 public partial class Form1 : Form
 {
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 5210a47a3a2ab37fb0bd3a4482c18f4a9e60476e
     public Form1()
     {
         InitializeComponent();
@@ -17,23 +11,15 @@ public partial class Form1 : Form
         MainGrid.CellClick += dataGridView1_CellClick;
 
         Repository<Room> roomRepo = new();
-
-<<<<<<< HEAD
-        Room room1 = new Room(1, 2, 100, "John Smith");
-        Room room2 = new Room(2, 3, 150, "Jenifer Lawrence");
-        roomRepo.Create(room1);
-        roomRepo.Create(room2);
-=======
-
-
+        
         Room room1 = new Room(1, 2, 100, "John Smith");
         Room room2 = new Room(2, 3, 150, "Jenifer Lawrence");
         Room room3 = new Room(3, 1, 200, "John Doe");
+        
         roomRepo.Create(room1);
         roomRepo.Create(room2);
         roomRepo.Create(room3);
->>>>>>> 5210a47a3a2ab37fb0bd3a4482c18f4a9e60476e
-
+        
         Console.WriteLine("Rooms:");
         foreach (var room in roomRepo.Read())
         {
