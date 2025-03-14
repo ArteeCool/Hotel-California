@@ -143,6 +143,7 @@ partial class Form1
         MainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         MainGrid.Location = new System.Drawing.Point(199, 6);
         MainGrid.Name = "MainGrid";
+        MainGrid.ReadOnly = true;
         MainGrid.Size = new System.Drawing.Size(594, 436);
         MainGrid.TabIndex = 15;
         MainGrid.Text = "dataGridView1";
