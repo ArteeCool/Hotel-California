@@ -1,3 +1,5 @@
+using HotelCali_Personal_NonGithubVersion;
+
 namespace HotelCalifornia;
 
 static class Program
@@ -12,5 +14,6 @@ static class Program
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
         Application.Run(new Form1());
+        Application.Run(new LoginForm());
     }
 }
