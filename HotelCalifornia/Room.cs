@@ -11,7 +11,7 @@ namespace HotelCalifornia
         public Int32 Id { get; set; }
 
         [JsonConstructor]
-        public Room(int roomNumber, int roomsCount, int roomCost, string roomPublisher)
+        public Room(Int32 roomNumber, Int32 roomsCount, Int32 roomCost, String roomPublisher)
         {
             RoomNumber = roomNumber;
             RoomsCount = roomsCount;

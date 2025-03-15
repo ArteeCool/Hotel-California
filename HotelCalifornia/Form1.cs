@@ -4,62 +4,23 @@ namespace HotelCalifornia;
 
 public partial class Form1 : Form
 {
-
-
+    private const String PathToFile = "rooms.json";
+    private Repository<Room> _roomsRepository = new([]);
+    private Int32 _selectedRoom;
+    private Boolean _isEditing;
 
     public Form1()
     {
         InitializeComponent();
-        
         MainGrid.CellClick += dataGridView1_CellClick;
-
-        Repository<Room> roomRepo = new();
-
-
-
-        Room room1 = new Room(1, 2, 100, "John Smith");
-        Room room2 = new Room(2, 3, 150, "Jenifer Lawrence");
-        Room room3 = new Room(3, 1, 200, "John Doe");
-        roomRepo.Create(room1);
-        roomRepo.Create(room2);
-        roomRepo.Create(room3);
-
-        Console.WriteLine("Rooms:");
-        foreach (var room in roomRepo.Read())
-        {
-            Console.WriteLine(room.RoomNumber);
-        }
-
-        room1.RoomNumber = 4;
-        roomRepo.Update(room1);
-
-        Console.WriteLine("\nUpdated Rooms:");
-        foreach (var room in roomRepo.Read())
-        {
-            Console.WriteLine(room.RoomNumber);
-        }
-
-        roomRepo.Delete(room2);
-
-        Console.WriteLine("\nRooms after deletion:");
-        foreach (var room in roomRepo.Read())
-        {
-            Console.WriteLine(room.RoomNumber);
-        }
     }
 
-    private readonly String _pathToFile = "rooms.json";
-    private List<Room> _rooms = [];
-    private Int32 _selectedRoom;
-    private Boolean _isEditing;
-
-    private static void SaveRoomsToFile(List<Room> rooms, String filePath)
+    private void SaveRoomsToFile()
     {
         try
         {
-            var json = JsonSerializer.Serialize(rooms, new JsonSerializerOptions { WriteIndented = true });
-            Console.WriteLine($"Saving to file: {json}");
-            File.WriteAllText(filePath, json);
+            var json = JsonSerializer.Serialize(_roomsRepository.Read(), new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(PathToFile, json);
         }
         catch (Exception ex)
         {
@@ -67,24 +28,24 @@ public partial class Form1 : Form
         }
     }
 
-    private static List<Room> LoadRoomsFromFile(String filePath)
+    private void LoadRoomsFromFile()
     {
-        if (!File.Exists(filePath) || new FileInfo(filePath).Length == 0)
+        if (!File.Exists(PathToFile) || new FileInfo(PathToFile).Length == 0)
         {
-            File.WriteAllText(filePath, "[]");
-            return [];
+            File.WriteAllText(PathToFile, "[]");
+            return;
         }
 
-        string json = File.ReadAllText(filePath);
-        Console.WriteLine($"Loaded from file: {json}");
-        return JsonSerializer.Deserialize<List<Room>>(json) ?? new List<Room>();
+        var json = File.ReadAllText(PathToFile);
+        var rooms = JsonSerializer.Deserialize<List<Room>>(json) ?? [];
+        _roomsRepository = new Repository<Room>(rooms);
     }
 
     private void FillRooms()
     {
         MainGrid.Rows.Clear();
 
-        foreach (var room in _rooms)
+        foreach (var room in _roomsRepository.Read())
         {
             MainGrid.Rows.Add(
                 room.RoomNumber,
@@ -95,10 +56,34 @@ public partial class Form1 : Form
         }
     }
 
-    private Room GetRoomInput()
+    private Room? GetRoomInput()
     {
-        var room = new Room(Convert.ToInt32(RoomNumberBox.Text), Convert.ToInt32(RoomsCountBox.Text), Convert.ToInt32(CostBox.Text), PublisherBox.Text);
-        return room;
+        if (String.IsNullOrWhiteSpace(RoomNumberBox.Text) ||
+            String.IsNullOrWhiteSpace(RoomsCountBox.Text) ||
+            String.IsNullOrWhiteSpace(CostBox.Text) ||
+            String.IsNullOrWhiteSpace(PublisherBox.Text))
+        {
+            MessageBox.Show("All fields must be filled.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return null;
+        }
+        
+
+        if (!Int32.TryParse(RoomNumberBox.Text, out var roomNumber) ||
+            !Int32.TryParse(RoomsCountBox.Text, out var roomCount) ||
+            !Int32.TryParse(CostBox.Text, out var cost))
+        {
+            MessageBox.Show("Room Number, Room Count, and Cost must be valid numbers.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return null;
+        }
+
+        var publisher = PublisherBox.Text.Trim();
+        if (String.IsNullOrEmpty(publisher))
+        {
+            MessageBox.Show("Publisher field cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return null;
+        }
+        
+        return new Room(roomNumber, roomCount, cost, publisher);
     }
 
     private void ClearTextEntries()
@@ -113,7 +98,7 @@ public partial class Form1 : Form
     {
         _selectedRoom = e.RowIndex;
     }
-    
+
     private void Form1_Load(Object sender, EventArgs e)
     {
         MainGrid.ColumnCount = 4;
@@ -122,54 +107,53 @@ public partial class Form1 : Form
         MainGrid.Columns[2].Name = "Cost";
         MainGrid.Columns[3].Name = "Publisher";
 
-        _rooms = LoadRoomsFromFile(_pathToFile);
-        if (_rooms == null)
-        {
-            File.WriteAllText(_pathToFile, "[]");
-            _rooms = [];
-        }
+        LoadRoomsFromFile();
         FillRooms();
     }
-    
+
     private void EditButton_Click(Object sender, EventArgs e)
     {
         _isEditing = true;
         AddButton.Text = "Save";
-        RoomNumberBox.Text = _rooms[_selectedRoom].RoomNumber.ToString();
-        RoomsCountBox.Text = _rooms[_selectedRoom].RoomsCount.ToString();
-        CostBox.Text = _rooms[_selectedRoom].RoomCost.ToString();
-        PublisherBox.Text = _rooms[_selectedRoom].RoomPublisher.ToString();
+        var rooms = _roomsRepository.Read();
+        RoomNumberBox.Text = rooms[_selectedRoom].RoomNumber.ToString();
+        RoomsCountBox.Text = rooms[_selectedRoom].RoomsCount.ToString();
+        CostBox.Text = rooms[_selectedRoom].RoomCost.ToString();
+        PublisherBox.Text = rooms[_selectedRoom].RoomPublisher;
     }
 
     private void AddButton_Click(Object sender, EventArgs e)
     {
         if (_isEditing)
         {
-            _rooms[_selectedRoom] = GetRoomInput();
-            ClearTextEntries();
-            FillRooms();
-            SaveRoomsToFile(_rooms, _pathToFile);
+            var rooms = _roomsRepository.Read();
+            var updatedRoom = GetRoomInput();
+            if (updatedRoom == null) return;
+            updatedRoom.Id = rooms[_selectedRoom].Id;
+            _roomsRepository.Update(updatedRoom);
             _isEditing = false;
             AddButton.Text = "Add";
         }
         else
         {
-            _rooms.Add(GetRoomInput());
-            ClearTextEntries();
-            FillRooms();
-            SaveRoomsToFile(_rooms, _pathToFile);
+            var room = GetRoomInput();
+            if (room == null) return;
+
+            _roomsRepository.Create(room);
         }
+        ClearTextEntries();
+        FillRooms();
+        SaveRoomsToFile();
     }
-    
+
     private void RemoveButton_Click(Object sender, EventArgs e)
     {
-        if (_rooms.Count <= 0) return;
-        if (_selectedRoom < 0 || _selectedRoom >= _rooms.Count) return;
+        var rooms = _roomsRepository.Read();
+        if (rooms.Count <= 0 || _selectedRoom < 0 || _selectedRoom >= rooms.Count) return;
 
-        if (!_rooms.Remove(_rooms[_selectedRoom])) return;
-
+        _roomsRepository.Delete(rooms[_selectedRoom]);
         FillRooms();
-        SaveRoomsToFile(_rooms, _pathToFile);
+        SaveRoomsToFile();
     }
 
     private void RoomNumber_TextChanged(Object sender, EventArgs e)
