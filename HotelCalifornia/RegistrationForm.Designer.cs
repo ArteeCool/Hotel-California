@@ -77,6 +77,8 @@
             register_btn.Text = "Sign up";
             register_btn.UseVisualStyleBackColor = false;
             register_btn.Click += register_btn_Click;
+            this.Controls.Add(register_btn);
+
             // 
             // register_password
             // 
@@ -232,7 +234,6 @@
             Controls.Add(register_confirmPassword);
             Controls.Add(label7);
             Controls.Add(register_showPassword);
-            Controls.Add(register_btn);
             Controls.Add(register_password);
             Controls.Add(label4);
             Controls.Add(register_username);

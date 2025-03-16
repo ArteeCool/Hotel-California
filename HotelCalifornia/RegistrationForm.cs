@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelCalifornia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,7 +54,10 @@ namespace HotelCali_Personal_NonGithubVersion
 
         private void register_btn_Click(object sender, EventArgs e)
         {
+            AdminMainForm adminForm = new AdminMainForm();
+            adminForm.Show();
 
+            this.Hide();
         }
     }
 }

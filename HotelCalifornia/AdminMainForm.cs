@@ -51,5 +51,15 @@ namespace HotelCalifornia
         {
 
         }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void admin_addUser1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

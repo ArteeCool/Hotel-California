@@ -1,3 +1,5 @@
+using HotelCalifornia;
+
 namespace HotelCali_Personal_NonGithubVersion
 {
     public partial class LoginForm : Form
@@ -77,7 +79,10 @@ namespace HotelCali_Personal_NonGithubVersion
 
         private void login_btn_Click_1(object sender, EventArgs e)
         {
+            AdminMainForm adminMainForm = new AdminMainForm();
+            adminMainForm.Show();
 
+            this.Hide();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

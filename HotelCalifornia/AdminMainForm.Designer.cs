@@ -42,6 +42,7 @@
             button1 = new Button();
             label5 = new Label();
             panel3 = new Panel();
+            admin_addUser1 = new admin_addUser();
             panel7 = new Panel();
             panel6 = new Panel();
             panel5 = new Panel();
@@ -109,6 +110,7 @@
             close.Size = new Size(22, 23);
             close.TabIndex = 1;
             close.Text = "X";
+            close.Click += close_Click;
             // 
             // panel2
             // 
@@ -278,6 +280,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(admin_addUser1);
             panel3.Controls.Add(panel7);
             panel3.Controls.Add(panel6);
             panel3.Dock = DockStyle.Fill;
@@ -286,12 +289,20 @@
             panel3.Size = new Size(1018, 714);
             panel3.TabIndex = 2;
             // 
+            // admin_addUser1
+            // 
+            admin_addUser1.BackColor = Color.White;
+            admin_addUser1.Location = new Point(0, 0);
+            admin_addUser1.Name = "admin_addUser1";
+            admin_addUser1.Size = new Size(1018, 714);
+            admin_addUser1.TabIndex = 15;
+            // 
             // panel7
             // 
             panel7.BackColor = Color.White;
             panel7.Location = new Point(6, 249);
             panel7.Name = "panel7";
-            panel7.Size = new Size(962, 453);
+            panel7.Size = new Size(962, 450);
             panel7.TabIndex = 14;
             // 
             // panel6
@@ -547,5 +558,6 @@
         private PictureBox pictureBox5;
         private Label label9;
         private Label label10;
+        private admin_addUser admin_addUser1;
     }
 }
