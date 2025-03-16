@@ -13,6 +13,10 @@ public partial class Form1 : Form
     {
         InitializeComponent();
         MainGrid.CellClick += dataGridView1_CellClick;
+        //Загружает дизайн-форму
+        AdminMainForm adminForm = new AdminMainForm();
+        adminForm.Show();
+
     }
 
     private void SaveRoomsToFile()

@@ -40,9 +40,9 @@
             register_signinBtn = new RoundedButton();
             label6 = new Label();
             label5 = new Label();
-            pictureBox1 = new PictureBox();
             register_confirmPassword = new TextBox();
             label7 = new Label();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -65,6 +65,8 @@
             register_btn.Cursor = Cursors.Hand;
             register_btn.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
             register_btn.FlatAppearance.BorderSize = 0;
+            register_btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            register_btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             register_btn.FlatStyle = FlatStyle.Flat;
             register_btn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             register_btn.ForeColor = Color.FromArgb(216, 59, 113);
@@ -131,7 +133,7 @@
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
             close.Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            close.Location = new Point(642, 9);
+            close.Location = new Point(636, 9);
             close.Name = "close";
             close.Size = new Size(19, 20);
             close.TabIndex = 13;
@@ -141,10 +143,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 242, 204);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(register_signinBtn);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -156,6 +158,8 @@
             register_signinBtn.BackColor = Color.FromArgb(255, 242, 204);
             register_signinBtn.Cursor = Cursors.Hand;
             register_signinBtn.FlatAppearance.BorderColor = Color.FromArgb(216, 59, 113);
+            register_signinBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            register_signinBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             register_signinBtn.FlatStyle = FlatStyle.Flat;
             register_signinBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             register_signinBtn.ForeColor = Color.FromArgb(216, 59, 113);
@@ -189,15 +193,6 @@
             label5.TabIndex = 9;
             label5.Text = "Hotel California ";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
-            pictureBox1.Location = new Point(70, 56);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 150);
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            // 
             // register_confirmPassword
             // 
             register_confirmPassword.Cursor = Cursors.IBeam;
@@ -218,6 +213,15 @@
             label7.Size = new Size(141, 17);
             label7.TabIndex = 22;
             label7.Text = "Confirm password";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
+            pictureBox1.Location = new Point(70, 56);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 150);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
             // 
             // RegistrationForm
             // 
@@ -262,8 +266,8 @@
         private RoundedButton register_signinBtn;
         private Label label6;
         private Label label5;
-        private PictureBox pictureBox1;
         private TextBox register_confirmPassword;
         private Label label7;
+        private PictureBox pictureBox1;
     }
 }

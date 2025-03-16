@@ -30,7 +30,6 @@ namespace HotelCali_Personal_NonGithubVersion
         private void InitializeComponent()
         {
             close = new Label();
-            pictureBox1 = new PictureBox();
             label5 = new Label();
             label6 = new Label();
             login_registerBtn = new RoundedButton();
@@ -42,8 +41,9 @@ namespace HotelCali_Personal_NonGithubVersion
             login_username = new TextBox();
             Username = new Label();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // close
@@ -57,16 +57,6 @@ namespace HotelCali_Personal_NonGithubVersion
             close.TabIndex = 0;
             close.Text = "X";
             close.Click += close_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
-            pictureBox1.Location = new Point(70, 56);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 150);
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label5
             // 
@@ -97,6 +87,8 @@ namespace HotelCali_Personal_NonGithubVersion
             login_registerBtn.BackColor = Color.FromArgb(255, 242, 204);
             login_registerBtn.Cursor = Cursors.Hand;
             login_registerBtn.FlatAppearance.BorderColor = Color.FromArgb(216, 59, 113);
+            login_registerBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            login_registerBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             login_registerBtn.FlatStyle = FlatStyle.Flat;
             login_registerBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             login_registerBtn.ForeColor = Color.FromArgb(216, 59, 113);
@@ -111,10 +103,10 @@ namespace HotelCali_Personal_NonGithubVersion
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 242, 204);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(login_registerBtn);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -139,6 +131,8 @@ namespace HotelCali_Personal_NonGithubVersion
             login_btn.BackColor = Color.FromArgb(255, 242, 204);
             login_btn.Cursor = Cursors.Hand;
             login_btn.FlatAppearance.BorderColor = Color.FromArgb(216, 59, 113);
+            login_btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            login_btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             login_btn.FlatStyle = FlatStyle.Flat;
             login_btn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             login_btn.ForeColor = Color.FromArgb(216, 59, 113);
@@ -204,6 +198,15 @@ namespace HotelCali_Personal_NonGithubVersion
             label2.Text = "Welcome back, User!";
             label2.Click += label2_Click_1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
+            pictureBox1.Location = new Point(70, 56);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 150);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -223,9 +226,9 @@ namespace HotelCali_Personal_NonGithubVersion
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,7 +240,6 @@ namespace HotelCali_Personal_NonGithubVersion
 
         #endregion
         private Label close;
-        private PictureBox pictureBox1;
         private Label label5;
         private Label label6;
         private RoundedButton login_registerBtn;
@@ -249,5 +251,6 @@ namespace HotelCali_Personal_NonGithubVersion
         private TextBox login_username;
         private Label Username;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }

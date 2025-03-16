@@ -63,9 +63,39 @@ namespace HotelCalifornia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap photo_2025_03_15_13_57_30__1___1_ {
+        internal static System.Drawing.Bitmap icons8_bag_of_money_60 {
             get {
-                object obj = ResourceManager.GetObject("photo_2025-03-15_13-57-30 (1) (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-bag-of-money-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_hotel_room_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-hotel-room-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_hotel_staff_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-hotel-staff-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_income_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-income-60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,16 +106,6 @@ namespace HotelCalifornia.Properties {
         internal static System.Drawing.Bitmap photo_2025_03_15_13_57_30__1___3__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("photo_2025-03-15_13-57-30__1___3_-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap photo_2025_03_15_13_57_30__1___3__removebg_preview__1___1_ {
-            get {
-                object obj = ResourceManager.GetObject("photo_2025-03-15_13-57-30__1___3_-removebg-preview (1) (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
