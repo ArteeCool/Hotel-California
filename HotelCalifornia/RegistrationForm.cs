@@ -1,15 +1,4 @@
-﻿using HotelCalifornia;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace HotelCali_Personal_NonGithubVersion
+﻿namespace HotelCalifornia
 {
     public partial class RegistrationForm : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace HotelCali_Personal_NonGithubVersion
+﻿namespace HotelCalifornia
 {
     partial class RegistrationForm
     {

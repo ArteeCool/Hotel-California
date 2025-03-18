@@ -1,6 +1,4 @@
-using HotelCalifornia;
-
-namespace HotelCali_Personal_NonGithubVersion
+namespace HotelCalifornia
 {
     public partial class LoginForm : Form
     {
