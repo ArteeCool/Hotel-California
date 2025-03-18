@@ -138,6 +138,7 @@
             pictureBox1.Size = new Size(200, 150);
             pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // button7
             // 
@@ -296,6 +297,7 @@
             admin_addUser1.Name = "admin_addUser1";
             admin_addUser1.Size = new Size(1018, 714);
             admin_addUser1.TabIndex = 15;
+            admin_addUser1.Load += admin_addUser1_Load_1;
             // 
             // panel7
             // 

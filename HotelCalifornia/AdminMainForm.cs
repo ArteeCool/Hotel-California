@@ -61,5 +61,15 @@ namespace HotelCalifornia
         {
 
         }
+
+        private void admin_addUser1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

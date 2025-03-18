@@ -1,5 +1,3 @@
-using HotelCali_Personal_NonGithubVersion;
-
 namespace HotelCalifornia;
 
 static class Program
