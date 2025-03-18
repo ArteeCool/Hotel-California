@@ -7,61 +7,13 @@ namespace HotelCalifornia
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void close_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void login_username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void password_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Username_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void login_password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void login_showPassword_CheckedChanged(object sender, EventArgs e)
         {
             login_password.PasswordChar = login_showPassword.Checked ? '\0' : '*';
@@ -81,11 +33,6 @@ namespace HotelCalifornia
             adminMainForm.Show();
 
             this.Hide();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void close_MouseEnter(object sender, EventArgs e)

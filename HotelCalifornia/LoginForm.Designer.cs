@@ -70,7 +70,6 @@ namespace HotelCalifornia
             label5.Size = new Size(184, 29);
             label5.TabIndex = 9;
             label5.Text = "Hotel California ";
-            label5.Click += label5_Click;
             // 
             // label6
             // 
@@ -82,7 +81,6 @@ namespace HotelCalifornia
             label6.Size = new Size(186, 25);
             label6.TabIndex = 10;
             label6.Text = "Create new account";
-            label6.Click += label6_Click;
             // 
             // login_registerBtn
             // 
@@ -114,11 +112,10 @@ namespace HotelCalifornia
             panel1.Name = "panel1";
             panel1.Size = new Size(333, 456);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
+            pictureBox1.Image = Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
             pictureBox1.Location = new Point(70, 56);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 150);
@@ -164,7 +161,6 @@ namespace HotelCalifornia
             login_password.PasswordChar = '*';
             login_password.Size = new Size(251, 30);
             login_password.TabIndex = 28;
-            login_password.TextChanged += login_password_TextChanged;
             // 
             // password
             // 
@@ -175,7 +171,6 @@ namespace HotelCalifornia
             password.Size = new Size(75, 18);
             password.TabIndex = 27;
             password.Text = "Password";
-            password.Click += password_Click;
             // 
             // login_username
             // 
@@ -185,7 +180,6 @@ namespace HotelCalifornia
             login_username.Name = "login_username";
             login_username.Size = new Size(251, 30);
             login_username.TabIndex = 26;
-            login_username.TextChanged += login_username_TextChanged;
             // 
             // Username
             // 
@@ -196,7 +190,6 @@ namespace HotelCalifornia
             Username.Size = new Size(77, 18);
             Username.TabIndex = 25;
             Username.Text = "Username";
-            Username.Click += Username_Click;
             // 
             // label2
             // 
@@ -207,7 +200,6 @@ namespace HotelCalifornia
             label2.Size = new Size(241, 29);
             label2.TabIndex = 24;
             label2.Text = "Welcome back, User!";
-            label2.Click += label2_Click_1;
             // 
             // LoginForm
             // 

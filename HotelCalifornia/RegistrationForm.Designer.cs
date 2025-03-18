@@ -126,7 +126,6 @@
             label2.Size = new Size(142, 29);
             label2.TabIndex = 15;
             label2.Text = "Registration";
-            label2.Click += label2_Click;
             // 
             // close
             // 
@@ -158,7 +157,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
+            pictureBox1.Image = Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
             pictureBox1.Location = new Point(70, 56);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 150);
@@ -214,7 +213,6 @@
             register_confirmPassword.PasswordChar = '*';
             register_confirmPassword.Size = new Size(251, 30);
             register_confirmPassword.TabIndex = 23;
-            register_confirmPassword.TextChanged += register_confirmPassword_TextChanged;
             // 
             // label7
             // 
@@ -247,7 +245,6 @@
             Name = "RegistrationForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RegistrationForm";
-            Load += RegistrationForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
