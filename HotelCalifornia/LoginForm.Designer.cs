@@ -34,6 +34,7 @@ namespace HotelCali_Personal_NonGithubVersion
             label6 = new Label();
             login_registerBtn = new RoundedButton();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             login_showPassword = new CheckBox();
             login_btn = new RoundedButton();
             login_password = new TextBox();
@@ -41,7 +42,6 @@ namespace HotelCali_Personal_NonGithubVersion
             login_username = new TextBox();
             Username = new Label();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -113,6 +113,15 @@ namespace HotelCali_Personal_NonGithubVersion
             panel1.Size = new Size(333, 456);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
+            pictureBox1.Location = new Point(70, 56);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 150);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
             // 
             // login_showPassword
             // 
@@ -197,15 +206,6 @@ namespace HotelCali_Personal_NonGithubVersion
             label2.TabIndex = 24;
             label2.Text = "Welcome back, User!";
             label2.Click += label2_Click_1;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
-            pictureBox1.Location = new Point(70, 56);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 150);
-            pictureBox1.TabIndex = 12;
-            pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 

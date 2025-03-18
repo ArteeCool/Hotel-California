@@ -169,9 +169,11 @@ namespace HotelCalifornia
 
         private void addUser_editBtn_Click(object sender, EventArgs e)
         {
+            var rooms = _roomsRepository.Read();
+            if (rooms.Count <= 0 || _selectedRoom < 0 || _selectedRoom >= rooms.Count) return;
+
             _isEditing = true;
             addUser_addBtn.Text = "Save";
-            var rooms = _roomsRepository.Read();
             RoomNumberBox.Text = rooms[_selectedRoom].RoomNumber.ToString();
             RoomsCountBox.Text = rooms[_selectedRoom].RoomsCount.ToString();
             CostBox.Text = rooms[_selectedRoom].RoomCost.ToString();
