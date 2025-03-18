@@ -34,6 +34,7 @@ namespace HotelCali_Personal_NonGithubVersion
             label6 = new Label();
             login_registerBtn = new RoundedButton();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             login_showPassword = new CheckBox();
             login_btn = new RoundedButton();
             login_password = new TextBox();
@@ -41,7 +42,6 @@ namespace HotelCali_Personal_NonGithubVersion
             login_username = new TextBox();
             Username = new Label();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -50,22 +50,24 @@ namespace HotelCali_Personal_NonGithubVersion
             // 
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
-            close.Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            close.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             close.Location = new Point(636, 9);
             close.Name = "close";
-            close.Size = new Size(19, 20);
+            close.Size = new Size(20, 20);
             close.TabIndex = 0;
             close.Text = "X";
             close.Click += close_Click;
+            close.MouseEnter += close_MouseEnter;
+            close.MouseLeave += close_MouseLeave;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(216, 59, 113);
             label5.Location = new Point(78, 219);
             label5.Name = "label5";
-            label5.Size = new Size(192, 27);
+            label5.Size = new Size(184, 29);
             label5.TabIndex = 9;
             label5.Text = "Hotel California ";
             label5.Click += label5_Click;
@@ -73,11 +75,11 @@ namespace HotelCali_Personal_NonGithubVersion
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(216, 59, 113);
             label6.Location = new Point(70, 366);
             label6.Name = "label6";
-            label6.Size = new Size(206, 23);
+            label6.Size = new Size(186, 25);
             label6.TabIndex = 10;
             label6.Text = "Create new account";
             label6.Click += label6_Click;
@@ -90,7 +92,7 @@ namespace HotelCali_Personal_NonGithubVersion
             login_registerBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             login_registerBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             login_registerBtn.FlatStyle = FlatStyle.Flat;
-            login_registerBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            login_registerBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             login_registerBtn.ForeColor = Color.FromArgb(216, 59, 113);
             login_registerBtn.Location = new Point(12, 404);
             login_registerBtn.Name = "login_registerBtn";
@@ -114,6 +116,15 @@ namespace HotelCali_Personal_NonGithubVersion
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
+            pictureBox1.Location = new Point(70, 56);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 150);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
             // login_showPassword
             // 
             login_showPassword.AutoSize = true;
@@ -134,7 +145,7 @@ namespace HotelCali_Personal_NonGithubVersion
             login_btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             login_btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             login_btn.FlatStyle = FlatStyle.Flat;
-            login_btn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            login_btn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             login_btn.ForeColor = Color.FromArgb(216, 59, 113);
             login_btn.Location = new Point(412, 349);
             login_btn.Name = "login_btn";
@@ -158,10 +169,10 @@ namespace HotelCali_Personal_NonGithubVersion
             // password
             // 
             password.AutoSize = true;
-            password.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            password.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             password.Location = new Point(383, 218);
             password.Name = "password";
-            password.Size = new Size(80, 17);
+            password.Size = new Size(75, 18);
             password.TabIndex = 27;
             password.Text = "Password";
             password.Click += password_Click;
@@ -179,10 +190,10 @@ namespace HotelCali_Personal_NonGithubVersion
             // Username
             // 
             Username.AutoSize = true;
-            Username.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Username.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Username.Location = new Point(383, 153);
             Username.Name = "Username";
-            Username.Size = new Size(83, 17);
+            Username.Size = new Size(77, 18);
             Username.TabIndex = 25;
             Username.Text = "Username";
             Username.Click += Username_Click;
@@ -190,22 +201,13 @@ namespace HotelCali_Personal_NonGithubVersion
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(383, 65);
             label2.Name = "label2";
-            label2.Size = new Size(251, 27);
+            label2.Size = new Size(241, 29);
             label2.TabIndex = 24;
             label2.Text = "Welcome back, User!";
             label2.Click += label2_Click_1;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
-            pictureBox1.Location = new Point(70, 56);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 150);
-            pictureBox1.TabIndex = 12;
-            pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 

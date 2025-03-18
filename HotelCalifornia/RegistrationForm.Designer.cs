@@ -37,12 +37,12 @@
             label2 = new Label();
             close = new Label();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             register_signinBtn = new RoundedButton();
             label6 = new Label();
             label5 = new Label();
             register_confirmPassword = new TextBox();
             label7 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -68,7 +68,7 @@
             register_btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             register_btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             register_btn.FlatStyle = FlatStyle.Flat;
-            register_btn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            register_btn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             register_btn.ForeColor = Color.FromArgb(216, 59, 113);
             register_btn.Location = new Point(413, 366);
             register_btn.Name = "register_btn";
@@ -77,8 +77,6 @@
             register_btn.Text = "Sign up";
             register_btn.UseVisualStyleBackColor = false;
             register_btn.Click += register_btn_Click;
-            this.Controls.Add(register_btn);
-
             // 
             // register_password
             // 
@@ -93,10 +91,10 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(383, 189);
             label4.Name = "label4";
-            label4.Size = new Size(80, 17);
+            label4.Size = new Size(75, 18);
             label4.TabIndex = 18;
             label4.Text = "Password";
             // 
@@ -112,20 +110,20 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(383, 124);
             label3.Name = "label3";
-            label3.Size = new Size(83, 17);
+            label3.Size = new Size(77, 18);
             label3.TabIndex = 16;
             label3.Text = "Username";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(383, 65);
             label2.Name = "label2";
-            label2.Size = new Size(149, 27);
+            label2.Size = new Size(142, 29);
             label2.TabIndex = 15;
             label2.Text = "Registration";
             label2.Click += label2_Click;
@@ -134,13 +132,16 @@
             // 
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
-            close.Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            close.Location = new Point(636, 9);
+            close.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            close.Location = new Point(635, 9);
             close.Name = "close";
-            close.Size = new Size(19, 20);
+            close.Size = new Size(20, 20);
             close.TabIndex = 13;
             close.Text = "X";
+            close.TextAlign = ContentAlignment.MiddleCenter;
             close.Click += close_Click;
+            close.MouseEnter += close_MouseEnter;
+            close.MouseLeave += close_MouseLeave;
             // 
             // panel1
             // 
@@ -155,6 +156,15 @@
             panel1.Size = new Size(333, 456);
             panel1.TabIndex = 14;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
+            pictureBox1.Location = new Point(70, 56);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 150);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
             // register_signinBtn
             // 
             register_signinBtn.BackColor = Color.FromArgb(255, 242, 204);
@@ -163,7 +173,7 @@
             register_signinBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             register_signinBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             register_signinBtn.FlatStyle = FlatStyle.Flat;
-            register_signinBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            register_signinBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             register_signinBtn.ForeColor = Color.FromArgb(216, 59, 113);
             register_signinBtn.Location = new Point(12, 404);
             register_signinBtn.Name = "register_signinBtn";
@@ -176,22 +186,22 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(216, 59, 113);
             label6.Location = new Point(70, 366);
             label6.Name = "label6";
-            label6.Size = new Size(208, 23);
+            label6.Size = new Size(189, 25);
             label6.TabIndex = 10;
             label6.Text = "Sign in your account";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(216, 59, 113);
             label5.Location = new Point(78, 219);
             label5.Name = "label5";
-            label5.Size = new Size(192, 27);
+            label5.Size = new Size(184, 29);
             label5.TabIndex = 9;
             label5.Text = "Hotel California ";
             // 
@@ -209,21 +219,12 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(383, 255);
             label7.Name = "label7";
-            label7.Size = new Size(141, 17);
+            label7.Size = new Size(130, 18);
             label7.TabIndex = 22;
             label7.Text = "Confirm password";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = HotelCalifornia.Properties.Resources.photo_2025_03_15_13_57_30__1___3__removebg_preview;
-            pictureBox1.Location = new Point(70, 56);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 150);
-            pictureBox1.TabIndex = 12;
-            pictureBox1.TabStop = false;
             // 
             // RegistrationForm
             // 
@@ -231,6 +232,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(667, 456);
+            Controls.Add(close);
+            Controls.Add(register_btn);
             Controls.Add(register_confirmPassword);
             Controls.Add(label7);
             Controls.Add(register_showPassword);
@@ -239,7 +242,6 @@
             Controls.Add(register_username);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(close);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RegistrationForm";

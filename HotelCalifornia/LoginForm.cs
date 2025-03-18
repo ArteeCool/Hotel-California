@@ -89,5 +89,15 @@ namespace HotelCali_Personal_NonGithubVersion
         {
 
         }
+
+        private void close_MouseEnter(object sender, EventArgs e)
+        {
+            close.ForeColor = Color.Red;
+        }
+
+        private void close_MouseLeave(object sender, EventArgs e)
+        {
+            close.ForeColor = Color.Black;
+        }
     }
 }
