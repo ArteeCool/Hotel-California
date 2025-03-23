@@ -28,8 +28,8 @@
 
         private void register_btn_Click(object sender, EventArgs e)
         {
-            AdminMainForm adminForm = new AdminMainForm();
-            adminForm.Show();
+            staffMainForm staffForm = new staffMainForm();
+            staffForm.Show();
 
             this.Hide();
         }

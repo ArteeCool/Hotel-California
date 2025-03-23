@@ -32,16 +32,15 @@
             label1 = new Label();
             close = new Label();
             panel2 = new Panel();
+            admin_addUserBtn = new Button();
             pictureBox1 = new PictureBox();
-            button7 = new Button();
-            button6 = new Button();
-            button5 = new RoundedButton();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            admin_logoutBtn = new RoundedButton();
+            admin_customersBtn = new Button();
+            admin_roomsBtn = new Button();
+            admin_dashboardBtn = new Button();
             label5 = new Label();
             panel3 = new Panel();
+            admin_rooms1 = new admin_rooms();
             admin_addUser1 = new admin_addUser();
             panel7 = new Panel();
             panel6 = new Panel();
@@ -61,6 +60,7 @@
             pictureBox5 = new PictureBox();
             label9 = new Label();
             label10 = new Label();
+            label11 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -79,6 +79,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(237, 201, 175);
+            panel1.Controls.Add(label11);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(close);
             panel1.Dock = DockStyle.Top;
@@ -115,20 +116,37 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 242, 204);
+            panel2.Controls.Add(admin_addUserBtn);
             panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(button7);
-            panel2.Controls.Add(button6);
-            panel2.Controls.Add(button5);
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(admin_logoutBtn);
+            panel2.Controls.Add(admin_customersBtn);
+            panel2.Controls.Add(admin_roomsBtn);
+            panel2.Controls.Add(admin_dashboardBtn);
             panel2.Controls.Add(label5);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 41);
             panel2.Name = "panel2";
             panel2.Size = new Size(250, 714);
             panel2.TabIndex = 1;
+            // 
+            // admin_addUserBtn
+            // 
+            admin_addUserBtn.BackColor = Color.FromArgb(255, 242, 204);
+            admin_addUserBtn.Cursor = Cursors.Hand;
+            admin_addUserBtn.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
+            admin_addUserBtn.FlatAppearance.BorderSize = 0;
+            admin_addUserBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            admin_addUserBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
+            admin_addUserBtn.FlatStyle = FlatStyle.Flat;
+            admin_addUserBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_addUserBtn.ForeColor = Color.Purple;
+            admin_addUserBtn.Location = new Point(28, 300);
+            admin_addUserBtn.Name = "admin_addUserBtn";
+            admin_addUserBtn.Size = new Size(182, 37);
+            admin_addUserBtn.TabIndex = 19;
+            admin_addUserBtn.Text = "Add User";
+            admin_addUserBtn.UseVisualStyleBackColor = false;
+            admin_addUserBtn.Click += admin_addUserBtn_Click;
             // 
             // pictureBox1
             // 
@@ -140,133 +158,80 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click_1;
             // 
-            // button7
+            // admin_logoutBtn
             // 
-            button7.BackColor = Color.FromArgb(255, 242, 204);
-            button7.Cursor = Cursors.Hand;
-            button7.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            button7.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = Color.Purple;
-            button7.Location = new Point(28, 378);
-            button7.Name = "button7";
-            button7.Size = new Size(182, 37);
-            button7.TabIndex = 17;
-            button7.Text = "Remove";
-            button7.UseVisualStyleBackColor = false;
+            admin_logoutBtn.BackColor = Color.FromArgb(255, 242, 204);
+            admin_logoutBtn.Cursor = Cursors.Hand;
+            admin_logoutBtn.FlatAppearance.BorderColor = Color.FromArgb(216, 59, 113);
+            admin_logoutBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            admin_logoutBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
+            admin_logoutBtn.FlatStyle = FlatStyle.Flat;
+            admin_logoutBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_logoutBtn.ForeColor = Color.Purple;
+            admin_logoutBtn.Location = new Point(28, 651);
+            admin_logoutBtn.Name = "admin_logoutBtn";
+            admin_logoutBtn.Size = new Size(182, 37);
+            admin_logoutBtn.TabIndex = 15;
+            admin_logoutBtn.Text = "Logout";
+            admin_logoutBtn.UseVisualStyleBackColor = false;
+            admin_logoutBtn.Click += admin_logoutBtn_Click;
             // 
-            // button6
+            // admin_customersBtn
             // 
-            button6.BackColor = Color.FromArgb(255, 242, 204);
-            button6.Cursor = Cursors.Hand;
-            button6.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            button6.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.Purple;
-            button6.Location = new Point(28, 421);
-            button6.Name = "button6";
-            button6.Size = new Size(182, 37);
-            button6.TabIndex = 16;
-            button6.Text = "Edit";
-            button6.UseVisualStyleBackColor = false;
+            admin_customersBtn.BackColor = Color.FromArgb(255, 242, 204);
+            admin_customersBtn.Cursor = Cursors.Hand;
+            admin_customersBtn.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
+            admin_customersBtn.FlatAppearance.BorderSize = 0;
+            admin_customersBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            admin_customersBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
+            admin_customersBtn.FlatStyle = FlatStyle.Flat;
+            admin_customersBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_customersBtn.ForeColor = Color.Purple;
+            admin_customersBtn.Location = new Point(28, 370);
+            admin_customersBtn.Name = "admin_customersBtn";
+            admin_customersBtn.Size = new Size(182, 37);
+            admin_customersBtn.TabIndex = 13;
+            admin_customersBtn.Text = "Customers";
+            admin_customersBtn.UseVisualStyleBackColor = false;
+            admin_customersBtn.Click += admin_customersBtn_Click;
             // 
-            // button5
+            // admin_roomsBtn
             // 
-            button5.BackColor = Color.FromArgb(255, 242, 204);
-            button5.Cursor = Cursors.Hand;
-            button5.FlatAppearance.BorderColor = Color.FromArgb(216, 59, 113);
-            button5.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            button5.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.Purple;
-            button5.Location = new Point(28, 665);
-            button5.Name = "button5";
-            button5.Size = new Size(182, 37);
-            button5.TabIndex = 15;
-            button5.Text = "Logout";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            admin_roomsBtn.BackColor = Color.FromArgb(255, 242, 204);
+            admin_roomsBtn.Cursor = Cursors.Hand;
+            admin_roomsBtn.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
+            admin_roomsBtn.FlatAppearance.BorderSize = 0;
+            admin_roomsBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            admin_roomsBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
+            admin_roomsBtn.FlatStyle = FlatStyle.Flat;
+            admin_roomsBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_roomsBtn.ForeColor = Color.Purple;
+            admin_roomsBtn.Location = new Point(28, 440);
+            admin_roomsBtn.Name = "admin_roomsBtn";
+            admin_roomsBtn.Size = new Size(182, 37);
+            admin_roomsBtn.TabIndex = 12;
+            admin_roomsBtn.Text = "Rooms";
+            admin_roomsBtn.UseVisualStyleBackColor = false;
+            admin_roomsBtn.Click += admin_roomsBtn_Click;
             // 
-            // button4
+            // admin_dashboardBtn
             // 
-            button4.BackColor = Color.FromArgb(255, 242, 204);
-            button4.Cursor = Cursors.Hand;
-            button4.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            button4.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.Purple;
-            button4.Location = new Point(28, 335);
-            button4.Name = "button4";
-            button4.Size = new Size(182, 37);
-            button4.TabIndex = 14;
-            button4.Text = "Add User";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(255, 242, 204);
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.Purple;
-            button3.Location = new Point(28, 249);
-            button3.Name = "button3";
-            button3.Size = new Size(182, 37);
-            button3.TabIndex = 13;
-            button3.Text = "Customers";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(255, 242, 204);
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Purple;
-            button2.Location = new Point(28, 292);
-            button2.Name = "button2";
-            button2.Size = new Size(182, 37);
-            button2.TabIndex = 12;
-            button2.Text = "Rooms";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(255, 242, 204);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Purple;
-            button1.Location = new Point(28, 206);
-            button1.Name = "button1";
-            button1.Size = new Size(182, 37);
-            button1.TabIndex = 5;
-            button1.Text = "Dashboard";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
+            admin_dashboardBtn.BackColor = Color.FromArgb(255, 242, 204);
+            admin_dashboardBtn.Cursor = Cursors.Hand;
+            admin_dashboardBtn.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
+            admin_dashboardBtn.FlatAppearance.BorderSize = 0;
+            admin_dashboardBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            admin_dashboardBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
+            admin_dashboardBtn.FlatStyle = FlatStyle.Flat;
+            admin_dashboardBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_dashboardBtn.ForeColor = Color.Purple;
+            admin_dashboardBtn.Location = new Point(28, 230);
+            admin_dashboardBtn.Name = "admin_dashboardBtn";
+            admin_dashboardBtn.Size = new Size(182, 37);
+            admin_dashboardBtn.TabIndex = 5;
+            admin_dashboardBtn.Text = "Dashboard";
+            admin_dashboardBtn.UseVisualStyleBackColor = false;
+            admin_dashboardBtn.Click += admin_dashboardBtn_Click;
             // 
             // label5
             // 
@@ -281,6 +246,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(admin_rooms1);
             panel3.Controls.Add(admin_addUser1);
             panel3.Controls.Add(panel7);
             panel3.Controls.Add(panel6);
@@ -289,6 +255,13 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1018, 714);
             panel3.TabIndex = 2;
+            // 
+            // admin_rooms1
+            // 
+            admin_rooms1.Location = new Point(0, 0);
+            admin_rooms1.Name = "admin_rooms1";
+            admin_rooms1.Size = new Size(1015, 714);
+            admin_rooms1.TabIndex = 16;
             // 
             // admin_addUser1
             // 
@@ -491,6 +464,17 @@
             label10.Text = "$0.0";
             label10.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Purple;
+            label11.Location = new Point(1166, 11);
+            label11.Name = "label11";
+            label11.Size = new Size(66, 21);
+            label11.TabIndex = 4;
+            label11.Text = "Admin";
+            // 
             // AdminMainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -533,13 +517,10 @@
         private Label label1;
         private Panel panel2;
         private Label label5;
-        private Button button1;
-        private RoundedButton button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button6;
-        private Button button7;
+        private Button admin_dashboardBtn;
+        private RoundedButton admin_logoutBtn;
+        private Button admin_customersBtn;
+        private Button admin_roomsBtn;
         private Panel panel3;
         private PictureBox pictureBox1;
         private Panel panel7;
@@ -560,6 +541,9 @@
         private PictureBox pictureBox5;
         private Label label9;
         private Label label10;
+        private Button admin_addUserBtn;
+        private admin_rooms admin_rooms1;
         private admin_addUser admin_addUser1;
+        private Label label11;
     }
 }
