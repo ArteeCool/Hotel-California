@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HotelCalifornia
+﻿namespace HotelCalifornia
 {
     public class Repository<T> : IRepository<T> where T : IEntity
     {

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text.Json;
 
 namespace HotelCalifornia
 {
@@ -17,11 +8,12 @@ namespace HotelCalifornia
         private Repository<Room> _roomsRepository = new([]);
         private Int32 _selectedRoom;
         private Boolean _isEditing;
+        
         public admin_addUser()
         {
             InitializeComponent();
             MainGrid.CellClick += dataGridView1_CellClick;
-            Load += Form1_Load; // Привязка метода к событию загрузки формы
+            Load += Form1_Load;
         }
 
         private void SaveRoomsToFile()
@@ -84,10 +76,10 @@ namespace HotelCalifornia
 
         private void addUser_clearBtn_Click(object sender, EventArgs e)
         {
-            clearFiedls();
+            ClearFiedls();
         }
 
-        public void clearFiedls()
+        private void ClearFiedls()
         {
             addUser_username.Text = "";
             addUser_password.Text = "";
@@ -99,10 +91,8 @@ namespace HotelCalifornia
         {
             if (_isEditing)
             {
-                var rooms = _roomsRepository.Read();
                 var updatedRoom = GetRoomInput();
                 if (updatedRoom == null) return;
-                updatedRoom.Id = rooms[_selectedRoom].Id;
                 _roomsRepository.Update(updatedRoom);
                 _isEditing = false;
                 addUser_addBtn.Text = "Add";
@@ -156,7 +146,7 @@ namespace HotelCalifornia
                 return null;
             }
 
-            return new Room(roomNumber, roomCount, cost, publisher);
+            return new Room(roomNumber, roomCount, cost, publisher, String.Empty);
         }
 
         private void ClearTextEntries()
