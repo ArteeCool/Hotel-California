@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             register_showPassword = new System.Windows.Forms.CheckBox();
             register_btn = new RoundedButton();
             register_password = new System.Windows.Forms.TextBox();
@@ -159,6 +160,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = ((System.Drawing.Image)resources.GetObject("pictureBox1.Image"));
             pictureBox1.Location = new System.Drawing.Point(70, 56);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(200, 150);
@@ -199,7 +201,7 @@
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
             label5.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)216)), ((int)((byte)59)), ((int)((byte)113)));
-            label5.Location = new System.Drawing.Point(78, 219);
+            label5.Location = new System.Drawing.Point(101, 215);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(141, 24);
             label5.TabIndex = 9;
@@ -268,9 +270,9 @@
         private Panel panel1;
         private RoundedButton register_signinBtn;
         private Label label6;
-        private Label label5;
+        private System.Windows.Forms.Label label5;
         private TextBox register_confirmPassword;
         private Label label7;
-        private PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

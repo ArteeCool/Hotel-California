@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel7 = new System.Windows.Forms.Panel();
-            panel6 = new System.Windows.Forms.Panel();
-            panel5 = new System.Windows.Forms.Panel();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            panel4 = new System.Windows.Forms.Panel();
-            pictureBox2 = new System.Windows.Forms.PictureBox();
-            label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            panel8 = new System.Windows.Forms.Panel();
-            pictureBox3 = new System.Windows.Forms.PictureBox();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
-            panel9 = new System.Windows.Forms.Panel();
-            pictureBox4 = new System.Windows.Forms.PictureBox();
-            label7 = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_dashboard));
+            panel7 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            label2 = new Label();
+            panel4 = new Panel();
+            pictureBox2 = new PictureBox();
+            label3 = new Label();
+            label4 = new Label();
+            panel8 = new Panel();
+            pictureBox3 = new PictureBox();
+            label5 = new Label();
+            label6 = new Label();
+            panel9 = new Panel();
+            pictureBox4 = new PictureBox();
+            label7 = new Label();
+            label8 = new Label();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -59,94 +60,97 @@
             // 
             // panel7
             // 
-            panel7.BackColor = System.Drawing.Color.White;
-            panel7.Location = new System.Drawing.Point(28, 243);
+            panel7.BackColor = Color.White;
+            panel7.Location = new Point(28, 243);
             panel7.Name = "panel7";
-            panel7.Size = new System.Drawing.Size(962, 453);
+            panel7.Size = new Size(962, 453);
             panel7.TabIndex = 12;
             // 
             // panel6
             // 
-            panel6.BackColor = System.Drawing.Color.White;
+            panel6.BackColor = Color.White;
             panel6.Controls.Add(panel5);
             panel6.Controls.Add(panel4);
             panel6.Controls.Add(panel8);
             panel6.Controls.Add(panel9);
-            panel6.Location = new System.Drawing.Point(28, 18);
+            panel6.Location = new Point(28, 18);
             panel6.Name = "panel6";
-            panel6.Size = new System.Drawing.Size(962, 199);
+            panel6.Size = new Size(962, 199);
             panel6.TabIndex = 11;
             // 
             // panel5
             // 
-            panel5.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)242)), ((int)((byte)204)));
+            panel5.BackColor = Color.FromArgb(255, 242, 204);
             panel5.Controls.Add(pictureBox1);
             panel5.Controls.Add(label1);
             panel5.Controls.Add(label2);
-            panel5.Location = new System.Drawing.Point(25, 29);
+            panel5.Location = new Point(25, 29);
             panel5.Name = "panel5";
-            panel5.Size = new System.Drawing.Size(179, 142);
+            panel5.Size = new Size(179, 142);
             panel5.TabIndex = 6;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new System.Drawing.Point(20, 20);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(20, 20);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(60, 60);
+            pictureBox1.Size = new Size(60, 60);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-            label1.ForeColor = System.Drawing.Color.Purple;
-            label1.Location = new System.Drawing.Point(20, 105);
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Purple;
+            label1.Location = new Point(20, 105);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(83, 20);
+            label1.Size = new Size(83, 20);
             label1.TabIndex = 14;
             label1.Text = "Total Staff";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-            label2.ForeColor = System.Drawing.Color.Purple;
-            label2.Location = new System.Drawing.Point(140, 20);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Purple;
+            label2.Location = new Point(140, 20);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(18, 20);
+            label2.Size = new Size(18, 20);
             label2.TabIndex = 15;
             label2.Text = "0";
-            label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label2.TextAlign = ContentAlignment.MiddleRight;
             label2.Click += label2_Click;
             // 
             // panel4
             // 
-            panel4.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)242)), ((int)((byte)204)));
+            panel4.BackColor = Color.FromArgb(255, 242, 204);
             panel4.Controls.Add(pictureBox2);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label4);
-            panel4.Location = new System.Drawing.Point(270, 29);
+            panel4.Location = new Point(270, 29);
             panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(179, 142);
+            panel4.Size = new Size(179, 142);
             panel4.TabIndex = 7;
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new System.Drawing.Point(20, 20);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(20, 20);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(60, 60);
+            pictureBox2.Size = new Size(60, 60);
             pictureBox2.TabIndex = 18;
             pictureBox2.TabStop = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-            label3.ForeColor = System.Drawing.Color.Purple;
-            label3.Location = new System.Drawing.Point(5, 105);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Purple;
+            label3.Location = new Point(5, 105);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(127, 20);
+            label3.Size = new Size(127, 20);
             label3.TabIndex = 16;
             label3.Text = "Available Rooms";
             label3.Click += label3_Click;
@@ -154,107 +158,111 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-            label4.ForeColor = System.Drawing.Color.Purple;
-            label4.Location = new System.Drawing.Point(140, 20);
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Purple;
+            label4.Location = new Point(140, 20);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(18, 20);
+            label4.Size = new Size(18, 20);
             label4.TabIndex = 17;
             label4.Text = "0";
-            label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label4.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel8
             // 
-            panel8.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)242)), ((int)((byte)204)));
+            panel8.BackColor = Color.FromArgb(255, 242, 204);
             panel8.Controls.Add(pictureBox3);
             panel8.Controls.Add(label5);
             panel8.Controls.Add(label6);
-            panel8.Location = new System.Drawing.Point(513, 29);
+            panel8.Location = new Point(513, 29);
             panel8.Name = "panel8";
-            panel8.Size = new System.Drawing.Size(179, 142);
+            panel8.Size = new Size(179, 142);
             panel8.TabIndex = 6;
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new System.Drawing.Point(20, 20);
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(20, 20);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new System.Drawing.Size(60, 60);
+            pictureBox3.Size = new Size(60, 60);
             pictureBox3.TabIndex = 20;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-            label5.ForeColor = System.Drawing.Color.Purple;
-            label5.Location = new System.Drawing.Point(20, 105);
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Purple;
+            label5.Location = new Point(20, 105);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(104, 20);
+            label5.Size = new Size(104, 20);
             label5.TabIndex = 18;
-            label5.Text = "Today\'s Profit";
+            label5.Text = "Today's Profit";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-            label6.ForeColor = System.Drawing.Color.Purple;
-            label6.Location = new System.Drawing.Point(120, 20);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Purple;
+            label6.Location = new Point(120, 20);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(40, 20);
+            label6.Size = new Size(40, 20);
             label6.TabIndex = 19;
             label6.Text = "$0.0";
-            label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label6.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel9
             // 
-            panel9.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)242)), ((int)((byte)204)));
+            panel9.BackColor = Color.FromArgb(255, 242, 204);
             panel9.Controls.Add(pictureBox4);
             panel9.Controls.Add(label7);
             panel9.Controls.Add(label8);
-            panel9.Location = new System.Drawing.Point(759, 29);
+            panel9.Location = new Point(759, 29);
             panel9.Name = "panel9";
-            panel9.Size = new System.Drawing.Size(179, 142);
+            panel9.Size = new Size(179, 142);
             panel9.TabIndex = 5;
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new System.Drawing.Point(20, 20);
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(20, 20);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new System.Drawing.Size(60, 60);
+            pictureBox4.Size = new Size(60, 60);
             pictureBox4.TabIndex = 22;
             pictureBox4.TabStop = false;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-            label7.ForeColor = System.Drawing.Color.Purple;
-            label7.Location = new System.Drawing.Point(20, 105);
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Purple;
+            label7.Location = new Point(20, 105);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(85, 20);
+            label7.Size = new Size(85, 20);
             label7.TabIndex = 20;
             label7.Text = "Total Profit";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-            label8.ForeColor = System.Drawing.Color.Purple;
-            label8.Location = new System.Drawing.Point(120, 20);
+            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Purple;
+            label8.Location = new Point(120, 20);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(40, 20);
+            label8.Size = new Size(40, 20);
             label8.TabIndex = 21;
             label8.Text = "$0.0";
-            label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label8.TextAlign = ContentAlignment.MiddleRight;
             // 
             // admin_dashboard
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel7);
             Controls.Add(panel6);
-            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            Size = new System.Drawing.Size(1018, 714);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "admin_dashboard";
+            Size = new Size(1018, 714);
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
