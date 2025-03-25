@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            clsoe = new Label();
+            Close_Button = new Label();
             label1 = new Label();
             close = new Label();
             panel2 = new Panel();
@@ -54,7 +54,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(237, 201, 175);
-            panel1.Controls.Add(clsoe);
+            panel1.Controls.Add(Close_Button);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(close);
             panel1.Dock = DockStyle.Top;
@@ -63,27 +63,29 @@
             panel1.Size = new Size(815, 41);
             panel1.TabIndex = 2;
             // 
-            // clsoe
+            // Close_Button
             // 
-            clsoe.AutoSize = true;
-            clsoe.Cursor = Cursors.Hand;
-            clsoe.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            clsoe.ForeColor = Color.Purple;
-            clsoe.Location = new Point(790, 9);
-            clsoe.Name = "clsoe";
-            clsoe.Size = new Size(22, 23);
-            clsoe.TabIndex = 3;
-            clsoe.Text = "X";
-            clsoe.Click += clsoe_Click;
+            Close_Button.AutoSize = true;
+            Close_Button.Cursor = Cursors.Hand;
+            Close_Button.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Close_Button.ForeColor = Color.Purple;
+            Close_Button.Location = new Point(790, 9);
+            Close_Button.Name = "Close_Button";
+            Close_Button.Size = new Size(26, 25);
+            Close_Button.TabIndex = 3;
+            Close_Button.Text = "X";
+            Close_Button.Click += Close_Button_Click;
+            Close_Button.MouseEnter += Close_Button_MouseEnter;
+            Close_Button.MouseLeave += Close_Button_MouseLeave;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Purple;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(199, 23);
+            label1.Size = new Size(177, 25);
             label1.TabIndex = 2;
             label1.Text = "Client's Information";
             // 
@@ -91,11 +93,11 @@
             // 
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            close.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             close.ForeColor = Color.Purple;
             close.Location = new Point(1238, 9);
             close.Name = "close";
-            close.Size = new Size(22, 23);
+            close.Size = new Size(26, 25);
             close.TabIndex = 1;
             close.Text = "X";
             // 
@@ -129,7 +131,7 @@
             roundedButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             roundedButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            roundedButton1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             roundedButton1.ForeColor = Color.Purple;
             roundedButton1.Location = new Point(452, 347);
             roundedButton1.Name = "roundedButton1";
@@ -146,7 +148,7 @@
             rooms_addBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             rooms_addBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             rooms_addBtn.FlatStyle = FlatStyle.Flat;
-            rooms_addBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rooms_addBtn.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rooms_addBtn.ForeColor = Color.Purple;
             rooms_addBtn.Location = new Point(90, 347);
             rooms_addBtn.Name = "rooms_addBtn";
@@ -291,7 +293,7 @@
         private Panel panel1;
         private Label label1;
         private Label close;
-        private Label clsoe;
+        private Label Close_Button;
         private Panel panel2;
         private Label label5;
         private Label label4;

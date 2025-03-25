@@ -17,24 +17,20 @@ namespace HotelCalifornia
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        // Можливо треба зробити кнопку закриття форми / кнопку повернення до минулої форми?
+        Point lastPoint = new Point();
+        private void Admin_Dashboard_MouseMove(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Admin_Dashboard_MouseDown(object sender, MouseEventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
+            lastPoint = new Point(e.X, e.Y);
         }
     }
 }

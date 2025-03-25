@@ -7,54 +7,35 @@
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AdminMainForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void close_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void admin_addUser1_Load(object sender, EventArgs e)
+        private void close_MouseEnter(Object sender, EventArgs e)
         {
-
+            close.ForeColor = Color.Red;
         }
 
-        private void admin_addUser1_Load_1(object sender, EventArgs e)
+        private void close_MouseLeave(Object sender, EventArgs e)
         {
-
+            close.ForeColor = Color.Purple;
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
+        Point lastPoint = new Point();
+        private void AdminMainForm_MouseMove(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void AdminMainForm_MouseDown(object sender, MouseEventArgs e)
         {
-
+            lastPoint = new Point(e.X, e.Y);
         }
 
         private void admin_logoutBtn_Click(object sender, EventArgs e)

@@ -254,6 +254,8 @@
             Name = "RegistrationForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RegistrationForm";
+            MouseDown += RegistrationForm_MouseDown;
+            MouseMove += RegistrationForm_MouseMove;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

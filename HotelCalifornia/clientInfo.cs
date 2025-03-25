@@ -17,9 +17,19 @@ namespace HotelCalifornia
             InitializeComponent();
         }
 
-        private void clsoe_Click(object sender, EventArgs e)
+        private void Close_Button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Close_Button_MouseEnter(Object sender, EventArgs e)
+        {
+            close.ForeColor = Color.Red;
+        }
+
+        private void Close_Button_MouseLeave(Object sender, EventArgs e)
+        {
+            close.ForeColor = Color.Purple;
         }
     }
 }

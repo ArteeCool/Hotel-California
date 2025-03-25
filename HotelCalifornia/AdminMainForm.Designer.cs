@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label11 = new Label();
             label1 = new Label();
             close = new Label();
             panel2 = new Panel();
@@ -60,7 +61,6 @@
             pictureBox5 = new PictureBox();
             label9 = new Label();
             label10 = new Label();
-            label11 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -88,30 +88,42 @@
             panel1.Size = new Size(1268, 41);
             panel1.TabIndex = 0;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Purple;
+            label11.Location = new Point(1166, 11);
+            label11.Name = "label11";
+            label11.Size = new Size(60, 22);
+            label11.TabIndex = 4;
+            label11.Text = "Admin";
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Purple;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(160, 23);
+            label1.Size = new Size(144, 25);
             label1.TabIndex = 2;
             label1.Text = "Hotel California";
-            label1.Click += label1_Click;
             // 
             // close
             // 
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            close.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             close.ForeColor = Color.Purple;
             close.Location = new Point(1238, 9);
             close.Name = "close";
-            close.Size = new Size(22, 23);
+            close.Size = new Size(26, 25);
             close.TabIndex = 1;
             close.Text = "X";
             close.Click += close_Click;
+            close.MouseEnter += close_MouseEnter;
+            close.MouseLeave += close_MouseLeave;
             // 
             // panel2
             // 
@@ -138,7 +150,7 @@
             admin_addUserBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             admin_addUserBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             admin_addUserBtn.FlatStyle = FlatStyle.Flat;
-            admin_addUserBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_addUserBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             admin_addUserBtn.ForeColor = Color.Purple;
             admin_addUserBtn.Location = new Point(28, 300);
             admin_addUserBtn.Name = "admin_addUserBtn";
@@ -156,7 +168,6 @@
             pictureBox1.Size = new Size(200, 150);
             pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // admin_logoutBtn
             // 
@@ -166,7 +177,7 @@
             admin_logoutBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             admin_logoutBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             admin_logoutBtn.FlatStyle = FlatStyle.Flat;
-            admin_logoutBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_logoutBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             admin_logoutBtn.ForeColor = Color.Purple;
             admin_logoutBtn.Location = new Point(28, 651);
             admin_logoutBtn.Name = "admin_logoutBtn";
@@ -185,7 +196,7 @@
             admin_customersBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             admin_customersBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             admin_customersBtn.FlatStyle = FlatStyle.Flat;
-            admin_customersBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_customersBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             admin_customersBtn.ForeColor = Color.Purple;
             admin_customersBtn.Location = new Point(28, 370);
             admin_customersBtn.Name = "admin_customersBtn";
@@ -204,7 +215,7 @@
             admin_roomsBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             admin_roomsBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             admin_roomsBtn.FlatStyle = FlatStyle.Flat;
-            admin_roomsBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_roomsBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             admin_roomsBtn.ForeColor = Color.Purple;
             admin_roomsBtn.Location = new Point(28, 440);
             admin_roomsBtn.Name = "admin_roomsBtn";
@@ -223,7 +234,7 @@
             admin_dashboardBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             admin_dashboardBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             admin_dashboardBtn.FlatStyle = FlatStyle.Flat;
-            admin_dashboardBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_dashboardBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             admin_dashboardBtn.ForeColor = Color.Purple;
             admin_dashboardBtn.Location = new Point(28, 230);
             admin_dashboardBtn.Name = "admin_dashboardBtn";
@@ -236,11 +247,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(216, 59, 113);
             label5.Location = new Point(28, 159);
             label5.Name = "label5";
-            label5.Size = new Size(182, 27);
+            label5.Size = new Size(178, 29);
             label5.TabIndex = 11;
             label5.Text = "Welcome, User";
             // 
@@ -270,7 +281,6 @@
             admin_addUser1.Name = "admin_addUser1";
             admin_addUser1.Size = new Size(1018, 714);
             admin_addUser1.TabIndex = 15;
-            admin_addUser1.Load += admin_addUser1_Load_1;
             // 
             // panel7
             // 
@@ -315,22 +325,22 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Purple;
             label2.Location = new Point(20, 105);
             label2.Name = "label2";
-            label2.Size = new Size(110, 23);
+            label2.Size = new Size(101, 25);
             label2.TabIndex = 14;
             label2.Text = "Total Staff";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Purple;
             label3.Location = new Point(140, 20);
             label3.Name = "label3";
-            label3.Size = new Size(22, 23);
+            label3.Size = new Size(23, 25);
             label3.TabIndex = 15;
             label3.Text = "0";
             label3.TextAlign = ContentAlignment.MiddleRight;
@@ -358,22 +368,22 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Purple;
             label4.Location = new Point(5, 105);
             label4.Name = "label4";
-            label4.Size = new Size(171, 23);
+            label4.Size = new Size(158, 25);
             label4.TabIndex = 16;
             label4.Text = "Available Rooms";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Purple;
             label6.Location = new Point(140, 20);
             label6.Name = "label6";
-            label6.Size = new Size(22, 23);
+            label6.Size = new Size(23, 25);
             label6.TabIndex = 17;
             label6.Text = "0";
             label6.TextAlign = ContentAlignment.MiddleRight;
@@ -401,22 +411,22 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Purple;
             label7.Location = new Point(20, 105);
             label7.Name = "label7";
-            label7.Size = new Size(145, 23);
+            label7.Size = new Size(131, 25);
             label7.TabIndex = 18;
             label7.Text = "Today's Profit";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Purple;
             label8.Location = new Point(120, 20);
             label8.Name = "label8";
-            label8.Size = new Size(52, 23);
+            label8.Size = new Size(50, 25);
             label8.TabIndex = 19;
             label8.Text = "$0.0";
             label8.TextAlign = ContentAlignment.MiddleRight;
@@ -444,36 +454,25 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Purple;
             label9.Location = new Point(20, 105);
             label9.Name = "label9";
-            label9.Size = new Size(117, 23);
+            label9.Size = new Size(105, 25);
             label9.TabIndex = 20;
             label9.Text = "Total Profit";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Purple;
             label10.Location = new Point(120, 20);
             label10.Name = "label10";
-            label10.Size = new Size(52, 23);
+            label10.Size = new Size(50, 25);
             label10.TabIndex = 21;
             label10.Text = "$0.0";
             label10.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.Purple;
-            label11.Location = new Point(1166, 11);
-            label11.Name = "label11";
-            label11.Size = new Size(66, 21);
-            label11.TabIndex = 4;
-            label11.Text = "Admin";
             // 
             // AdminMainForm
             // 
@@ -487,7 +486,8 @@
             Name = "AdminMainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminMainForm";
-            Load += AdminMainForm_Load;
+            MouseDown += AdminMainForm_MouseDown;
+            MouseMove += AdminMainForm_MouseMove;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

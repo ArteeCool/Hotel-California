@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
-            panel1 = new Panel();
             label3 = new Label();
+            panel1 = new Panel();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,6 +43,16 @@
             panel2.Size = new Size(980, 681);
             panel2.TabIndex = 1;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(19, 16);
+            label3.Name = "label3";
+            label3.Size = new Size(134, 25);
+            label3.TabIndex = 25;
+            label3.Text = "All Customers";
+            // 
             // panel1
             // 
             panel1.BackColor = Color.DarkGray;
@@ -51,16 +61,6 @@
             panel1.Size = new Size(944, 607);
             panel1.TabIndex = 1;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(19, 16);
-            label3.Name = "label3";
-            label3.Size = new Size(146, 23);
-            label3.TabIndex = 25;
-            label3.Text = "All Customers";
-            // 
             // admin_customers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -68,6 +68,8 @@
             Controls.Add(panel2);
             Name = "admin_customers";
             Size = new Size(1010, 714);
+            MouseDown += Admin_Customers_MouseDown;
+            MouseMove += Admin_Customers_MouseMove;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
