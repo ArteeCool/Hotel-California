@@ -28,18 +28,18 @@ namespace HotelCalifornia
         }
 
       
-        private void close_Click(object sender, EventArgs e)
+        private void close_Click(Object sender, EventArgs e)
         {
             Application.Exit();
         }
 
        
-        private void login_showPassword_CheckedChanged(object sender, EventArgs e)
+        private void login_showPassword_CheckedChanged(Object sender, EventArgs e)
         {
             login_password.PasswordChar = login_showPassword.Checked ? '\0' : '*';
         }
 
-        private void login_registerBtn_Click(object sender, EventArgs e)
+        private void login_registerBtn_Click(Object sender, EventArgs e)
         {
             RegistrationForm regForm = new RegistrationForm();
             regForm.Show();
@@ -47,7 +47,7 @@ namespace HotelCalifornia
             this.Hide();
         }
 
-        private void login_btn_Click_1(object sender, EventArgs e)
+        private void login_btn_Click_1(Object sender, EventArgs e)
         {
             Login();
         }
@@ -61,7 +61,7 @@ namespace HotelCalifornia
         {
             var user = GetNewUser();
             var loginUser = _usersData.Read().FirstOrDefault(item => item.Login == user.Login);
-            if (loginUser != null && BCrypt.Net.BCrypt.Verify(user.Password, loginUser.Password))
+            if (loginUser != null && BCrypt.Net.BCrypt.EnhancedVerify(user.Password, loginUser.Password))
             {
                 if (loginUser.IsAdmin)
                 {
@@ -83,12 +83,12 @@ namespace HotelCalifornia
         }
 
 
-        private void close_MouseEnter(object sender, EventArgs e)
+        private void close_MouseEnter(Object sender, EventArgs e)
         {
             close.ForeColor = Color.Red;
         }
 
-        private void close_MouseLeave(object sender, EventArgs e)
+        private void close_MouseLeave(Object sender, EventArgs e)
         {
             close.ForeColor = Color.Black;
         }

@@ -107,7 +107,7 @@ namespace HotelCalifornia
                 return;
             }
 
-            user.Password = BCrypt.Net.BCrypt.HashPassword(register_password.Text.Trim());
+            user.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(register_password.Text.Trim());
             _userRepository.Create(user);
             SaveToFile();
 
