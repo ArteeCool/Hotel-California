@@ -42,16 +42,6 @@ namespace HotelCalifornia
             }
         }
 
-        private void RegistrationForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void close_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -69,11 +59,6 @@ namespace HotelCalifornia
         {
             register_password.PasswordChar = register_showPassword.Checked ? '\0' : '*';
             register_confirmPassword.PasswordChar = register_showPassword.Checked ? '\0' : '*';
-        }
-
-        private void register_confirmPassword_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void register_btn_Click(object sender, EventArgs e)
@@ -128,9 +113,20 @@ namespace HotelCalifornia
             close.ForeColor = Color.Black;
         }
 
-        private void register_username_TextChanged(Object sender, EventArgs e)
+       
+        Point lastPoint = new Point();
+        private void RegistrationForm_MouseMove(object sender, MouseEventArgs e)
         {
-            
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void RegistrationForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
         }
     }
 }
