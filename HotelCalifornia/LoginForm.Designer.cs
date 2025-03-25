@@ -35,6 +35,7 @@ namespace HotelCalifornia
             label6 = new Label();
             login_registerBtn = new RoundedButton();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             login_showPassword = new CheckBox();
             login_btn = new RoundedButton();
             login_password = new TextBox();
@@ -42,7 +43,6 @@ namespace HotelCalifornia
             login_username = new TextBox();
             Username = new Label();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -52,9 +52,9 @@ namespace HotelCalifornia
             close.AutoSize = true;
             close.Cursor = Cursors.Hand;
             close.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            close.Location = new Point(636, 9);
+            close.Location = new Point(727, 12);
             close.Name = "close";
-            close.Size = new Size(17, 17);
+            close.Size = new Size(20, 20);
             close.TabIndex = 0;
             close.Text = "X";
             close.Click += close_Click;
@@ -66,9 +66,9 @@ namespace HotelCalifornia
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(216, 59, 113);
-            label5.Location = new Point(101, 218);
+            label5.Location = new Point(115, 291);
             label5.Name = "label5";
-            label5.Size = new Size(141, 24);
+            label5.Size = new Size(184, 29);
             label5.TabIndex = 9;
             label5.Text = "Hotel California ";
             // 
@@ -77,9 +77,9 @@ namespace HotelCalifornia
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(216, 59, 113);
-            label6.Location = new Point(70, 366);
+            label6.Location = new Point(80, 488);
             label6.Name = "label6";
-            label6.Size = new Size(151, 20);
+            label6.Size = new Size(186, 25);
             label6.TabIndex = 10;
             label6.Text = "Create new account";
             // 
@@ -93,9 +93,10 @@ namespace HotelCalifornia
             login_registerBtn.FlatStyle = FlatStyle.Flat;
             login_registerBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             login_registerBtn.ForeColor = Color.FromArgb(216, 59, 113);
-            login_registerBtn.Location = new Point(12, 404);
+            login_registerBtn.Location = new Point(14, 539);
+            login_registerBtn.Margin = new Padding(3, 4, 3, 4);
             login_registerBtn.Name = "login_registerBtn";
-            login_registerBtn.Size = new Size(304, 40);
+            login_registerBtn.Size = new Size(347, 53);
             login_registerBtn.TabIndex = 11;
             login_registerBtn.Text = "Register";
             login_registerBtn.UseVisualStyleBackColor = false;
@@ -110,17 +111,29 @@ namespace HotelCalifornia
             panel1.Controls.Add(label5);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(333, 456);
+            panel1.Size = new Size(381, 608);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(80, 71);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(229, 200);
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
             // 
             // login_showPassword
             // 
             login_showPassword.AutoSize = true;
             login_showPassword.Cursor = Cursors.Hand;
-            login_showPassword.Location = new Point(383, 278);
+            login_showPassword.Location = new Point(438, 371);
+            login_showPassword.Margin = new Padding(3, 4, 3, 4);
             login_showPassword.Name = "login_showPassword";
-            login_showPassword.Size = new Size(108, 19);
+            login_showPassword.Size = new Size(134, 24);
             login_showPassword.TabIndex = 30;
             login_showPassword.Text = "Show password";
             login_showPassword.UseVisualStyleBackColor = true;
@@ -136,9 +149,10 @@ namespace HotelCalifornia
             login_btn.FlatStyle = FlatStyle.Flat;
             login_btn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             login_btn.ForeColor = Color.FromArgb(216, 59, 113);
-            login_btn.Location = new Point(412, 349);
+            login_btn.Location = new Point(471, 465);
+            login_btn.Margin = new Padding(3, 4, 3, 4);
             login_btn.Name = "login_btn";
-            login_btn.Size = new Size(190, 40);
+            login_btn.Size = new Size(217, 53);
             login_btn.TabIndex = 0;
             login_btn.Text = "Login";
             login_btn.UseVisualStyleBackColor = false;
@@ -148,19 +162,20 @@ namespace HotelCalifornia
             // 
             login_password.Cursor = Cursors.IBeam;
             login_password.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            login_password.Location = new Point(383, 242);
+            login_password.Location = new Point(438, 323);
+            login_password.Margin = new Padding(3, 4, 3, 4);
             login_password.Name = "login_password";
             login_password.PasswordChar = '*';
-            login_password.Size = new Size(251, 26);
+            login_password.Size = new Size(286, 30);
             login_password.TabIndex = 28;
             // 
             // password
             // 
             password.AutoSize = true;
             password.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            password.Location = new Point(383, 218);
+            password.Location = new Point(438, 291);
             password.Name = "password";
-            password.Size = new Size(61, 15);
+            password.Size = new Size(75, 18);
             password.TabIndex = 27;
             password.Text = "Password";
             // 
@@ -168,18 +183,19 @@ namespace HotelCalifornia
             // 
             login_username.Cursor = Cursors.IBeam;
             login_username.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            login_username.Location = new Point(383, 177);
+            login_username.Location = new Point(438, 236);
+            login_username.Margin = new Padding(3, 4, 3, 4);
             login_username.Name = "login_username";
-            login_username.Size = new Size(251, 26);
+            login_username.Size = new Size(286, 30);
             login_username.TabIndex = 26;
             // 
             // Username
             // 
             Username.AutoSize = true;
             Username.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Username.Location = new Point(383, 153);
+            Username.Location = new Point(438, 204);
             Username.Name = "Username";
-            Username.Size = new Size(65, 15);
+            Username.Size = new Size(77, 18);
             Username.TabIndex = 25;
             Username.Text = "Username";
             // 
@@ -187,27 +203,18 @@ namespace HotelCalifornia
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(383, 65);
+            label2.Location = new Point(438, 87);
             label2.Name = "label2";
-            label2.Size = new Size(190, 24);
+            label2.Size = new Size(241, 29);
             label2.TabIndex = 24;
             label2.Text = "Welcome back, User!";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(70, 53);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 150);
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
-            // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(667, 456);
+            ClientSize = new Size(762, 608);
             Controls.Add(login_showPassword);
             Controls.Add(login_btn);
             Controls.Add(login_password);
@@ -218,10 +225,11 @@ namespace HotelCalifornia
             Controls.Add(close);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            MouseDown += LoginForm_MouseDown;
+            MouseMove += LoginForm_MouseMove;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
