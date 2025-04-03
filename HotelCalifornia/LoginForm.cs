@@ -5,28 +5,13 @@ namespace HotelCalifornia
 {
     public partial class LoginForm : Form
     {
-        private Repository<User> _usersData = new([]);
         private const String PathToFile = "user.json";
+        private Repository<User> _usersData = new(new JsonStorage<User>(PathToFile));
 
         public LoginForm()
         {
             InitializeComponent();
-            LoadRoomsFromFile();
         }
-
-        private void LoadRoomsFromFile()
-        {
-            if (!File.Exists(PathToFile) || new FileInfo(PathToFile).Length == 0)
-            {
-                File.WriteAllText(PathToFile, "[]");
-                return;
-            }
-
-            var json = File.ReadAllText(PathToFile);
-            var rooms = JsonSerializer.Deserialize<List<User>>(json) ?? [];
-            _usersData = new Repository<User>(rooms);
-        }
-
 
         private void close_Click(Object sender, EventArgs e)
         {

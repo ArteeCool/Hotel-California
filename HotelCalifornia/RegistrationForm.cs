@@ -5,41 +5,12 @@ namespace HotelCalifornia
 {
     public partial class RegistrationForm : Form
     {
-        private Repository<User> _userRepository = new([]);
-        private Repository<User> _usersData = new([]);
         private const String PathToFile = "user.json";
+        private Repository<User> _usersData = new(new JsonStorage<User>(PathToFile));
 
         public RegistrationForm()
         {
             InitializeComponent();
-            LoadRoomsFromFile();
-        }
-        
-        private void LoadRoomsFromFile()
-        {
-            if (!File.Exists(PathToFile) || new FileInfo(PathToFile).Length == 0)
-            {
-                File.WriteAllText(PathToFile, "[]");
-                return;
-            }
-
-            var json = File.ReadAllText(PathToFile);
-            var rooms = JsonSerializer.Deserialize<List<User>>(json) ?? [];
-            _usersData = new Repository<User>(rooms);
-        }
-        
-        private void SaveToFile()
-        {
-            try
-            {
-                var combinedList = _usersData.Read().Concat(_userRepository.Read()).ToList();
-                var json = JsonSerializer.Serialize(combinedList, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(PathToFile, json);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error during serialization: {ex.Message}");
-            }
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -93,11 +64,14 @@ namespace HotelCalifornia
             }
 
             user.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(register_password.Text.Trim());
-            _userRepository.Create(user);
-            SaveToFile();
-
+            _usersData.Create(user);
+            
+            var json = JsonSerializer.Serialize(user);
+            
             var staffMainForm = new staffMainForm();
             staffMainForm.Show();
+            
+            _usersData.Save();
     
             Hide();
         }

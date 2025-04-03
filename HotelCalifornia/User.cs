@@ -4,7 +4,7 @@ namespace HotelCalifornia;
 
 public class User : IEntity
 {
-    public String Id { get; }
+    public String Id { get; set; }
     public String Login { get; set; }
     public String Password { get; set; }
     public Boolean IsAdmin { get; set; }

@@ -49,6 +49,13 @@
             }
         }
 
+        private Room GetInput()
+        {
+            Room room = null;
+
+            return room;
+        }
+
         private void admin_dashboardBtn_Click(object sender, EventArgs e)
         {
             admin_dashboard adminDashBoard = new admin_dashboard();
@@ -58,9 +65,6 @@
 
         private void admin_addUserBtn_Click(object sender, EventArgs e)
         {
-            admin_addUser adminAddUser = new admin_addUser();
-            admin_rooms1.Controls.Clear();
-            admin_rooms1.Controls.Add(adminAddUser);
         }
 
         private void admin_roomsBtn_Click(object sender, EventArgs e)
@@ -75,6 +79,21 @@
             admin_customers adminCustomers = new admin_customers();
             admin_rooms1.Controls.Clear();
             admin_rooms1.Controls.Add(adminCustomers);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void admin_rooms1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

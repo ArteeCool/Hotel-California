@@ -1,11 +1,11 @@
-﻿using System.Text.Json;
+﻿/*using System.Text.Json;
 
 namespace HotelCalifornia
 {
     public partial class admin_addUser : UserControl
     {
         private const String PathToFile = "rooms.json";
-        private Repository<Room> _roomsRepository = new([]);
+        private Repository<Room> _roomsRepository = new(new JsonStorage<Room>(PathToFile));
         private Int32 _selectedRoom;
         private Boolean _isEditing;
         
@@ -16,36 +16,9 @@ namespace HotelCalifornia
             Load += Form1_Load;
         }
 
-        private void SaveRoomsToFile()
-        {
-            try
-            {
-                var json = JsonSerializer.Serialize(_roomsRepository.Read(), new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(PathToFile, json);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error during serialization: {ex.Message}");
-            }
-        }
-
-        private void LoadRoomsFromFile()
-        {
-            if (!File.Exists(PathToFile) || new FileInfo(PathToFile).Length == 0)
-            {
-                File.WriteAllText(PathToFile, "[]");
-                return;
-            }
-
-            var json = File.ReadAllText(PathToFile);
-            var rooms = JsonSerializer.Deserialize<List<Room>>(json) ?? [];
-            _roomsRepository = new Repository<Room>(rooms);
-        }
-
         private void Form1_Load(Object sender, EventArgs e)
         {
             InitializeGridColumns();
-            LoadRoomsFromFile();
             FillRooms();
         }
 
@@ -106,7 +79,6 @@ namespace HotelCalifornia
             }
             ClearTextEntries();
             FillRooms();
-            SaveRoomsToFile();
         }
 
         private void dataGridView1_CellClick(Object? sender, DataGridViewCellEventArgs e)
@@ -177,7 +149,8 @@ namespace HotelCalifornia
 
             _roomsRepository.Delete(rooms[_selectedRoom]);
             FillRooms();
-            SaveRoomsToFile();
+            _roomsRepository.Save();
         }
     }
 }
+*/

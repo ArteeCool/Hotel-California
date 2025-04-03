@@ -2,37 +2,37 @@
 {
     public class Repository<T> : IRepository<T> where T : IEntity
     {
-        private readonly List<T> _entities;
+        private readonly IDataStorage<T>? _storage;
 
-        public Repository(List<T> entities)
+        public Repository(IDataStorage<T> storage)
         {
-            _entities = entities;
+            _storage = storage;
         }
-
+        
         public void Create(T entity)
         {
-            _entities.Add(entity);
+            _storage.Add(entity);
         }
 
         public void Delete(T entity)
         {
-            if (!_entities.Contains(entity))
-            {
-                Console.WriteLine("Entity not found.");
-                return;
-            }
-            _entities.Remove(entity);
+            _storage.Delete(entity.Id);
         }
 
         public List<T> Read()
         {
-            return new List<T>(_entities);
+            return new List<T>(_storage.GetAll());
         }
 
         public void Update(T entity)
         {
-            var index = _entities.FindIndex(e => e.Id == entity.Id);
-            _entities[index] = entity;
+            var index = _storage.GetAll().FindIndex(e => e.Id == entity.Id);
+            _storage.GetAll()[index] = entity;
+        }
+        
+        public void Save()
+        {
+            _storage?.Save();
         }
     }
 }

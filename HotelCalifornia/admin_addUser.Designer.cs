@@ -1,4 +1,4 @@
-﻿namespace HotelCalifornia
+﻿/*namespace HotelCalifornia
 {
     partial class admin_addUser
     {
@@ -365,3 +365,4 @@
         private Label label8;
     }
 }
+*/
