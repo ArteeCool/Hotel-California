@@ -6,6 +6,8 @@ namespace HotelCalifornia
         void Delete(T entity);
         List<T> Read();
         void Update(T entity);
+
+        void Save();
     }
 }
 
