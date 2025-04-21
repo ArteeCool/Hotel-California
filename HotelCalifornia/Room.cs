@@ -17,6 +17,7 @@ namespace HotelCalifornia
             Type = type;
             Price = price;
             Status = status;
+            
             Id = String.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
         }
 

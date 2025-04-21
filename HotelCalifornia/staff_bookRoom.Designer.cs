@@ -28,28 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel6 = new Panel();
-            label1 = new Label();
+            bookRoom_To = new DateTimePicker();
+            bookRoom_From = new DateTimePicker();
+            bookRoom_roomPrice = new Label();
             label2 = new Label();
             bookRoom_clearBtn = new RoundedButton();
             bookRoom_scheduleNowBtn = new RoundedButton();
             label16 = new Label();
             label15 = new Label();
-            label13 = new Label();
+            bookRoom_TotalPrice = new Label();
             label14 = new Label();
             bookRoom_BookBtn = new RoundedButton();
-            label9 = new Label();
+            bookRoom_roomStatus = new Label();
             label10 = new Label();
-            label11 = new Label();
+            bookRoom_roomName = new Label();
             label12 = new Label();
-            label7 = new Label();
+            bookRoom_roomType = new Label();
             label8 = new Label();
-            label6 = new Label();
+            bookRoom_roomId = new Label();
             label4 = new Label();
             panel5 = new Panel();
-            pictureBox1 = new PictureBox();
+            bookRoom_ImageView = new PictureBox();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
             roundedButton1 = new RoundedButton();
@@ -57,7 +59,7 @@
             label3 = new Label();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookRoom_ImageView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MainGrid).BeginInit();
@@ -66,37 +68,53 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(label1);
+            panel6.Controls.Add(bookRoom_To);
+            panel6.Controls.Add(bookRoom_From);
+            panel6.Controls.Add(bookRoom_roomPrice);
             panel6.Controls.Add(label2);
             panel6.Controls.Add(bookRoom_clearBtn);
             panel6.Controls.Add(bookRoom_scheduleNowBtn);
             panel6.Controls.Add(label16);
             panel6.Controls.Add(label15);
-            panel6.Controls.Add(label13);
+            panel6.Controls.Add(bookRoom_TotalPrice);
             panel6.Controls.Add(label14);
             panel6.Controls.Add(bookRoom_BookBtn);
-            panel6.Controls.Add(label9);
+            panel6.Controls.Add(bookRoom_roomStatus);
             panel6.Controls.Add(label10);
-            panel6.Controls.Add(label11);
+            panel6.Controls.Add(bookRoom_roomName);
             panel6.Controls.Add(label12);
-            panel6.Controls.Add(label7);
+            panel6.Controls.Add(bookRoom_roomType);
             panel6.Controls.Add(label8);
-            panel6.Controls.Add(label6);
+            panel6.Controls.Add(bookRoom_roomId);
             panel6.Controls.Add(label4);
             panel6.Location = new Point(637, 28);
             panel6.Name = "panel6";
             panel6.Size = new Size(363, 660);
             panel6.TabIndex = 5;
             // 
-            // label1
+            // bookRoom_To
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            label1.Location = new Point(131, 191);
-            label1.Name = "label1";
-            label1.Size = new Size(68, 18);
-            label1.TabIndex = 46;
-            label1.Text = "----------";
+            bookRoom_To.Location = new Point(131, 308);
+            bookRoom_To.Name = "bookRoom_To";
+            bookRoom_To.Size = new Size(190, 27);
+            bookRoom_To.TabIndex = 48;
+            // 
+            // bookRoom_From
+            // 
+            bookRoom_From.Location = new Point(131, 271);
+            bookRoom_From.Name = "bookRoom_From";
+            bookRoom_From.Size = new Size(190, 27);
+            bookRoom_From.TabIndex = 47;
+            // 
+            // bookRoom_roomPrice
+            // 
+            bookRoom_roomPrice.AutoSize = true;
+            bookRoom_roomPrice.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            bookRoom_roomPrice.Location = new Point(131, 191);
+            bookRoom_roomPrice.Name = "bookRoom_roomPrice";
+            bookRoom_roomPrice.Size = new Size(68, 18);
+            bookRoom_roomPrice.TabIndex = 46;
+            bookRoom_roomPrice.Text = "----------";
             // 
             // label2
             // 
@@ -163,15 +181,15 @@
             label15.TabIndex = 40;
             label15.Text = "From Schedule:";
             // 
-            // label13
+            // bookRoom_TotalPrice
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label13.Location = new Point(227, 454);
-            label13.Name = "label13";
-            label13.Size = new Size(54, 25);
-            label13.TabIndex = 39;
-            label13.Text = "0.00";
+            bookRoom_TotalPrice.AutoSize = true;
+            bookRoom_TotalPrice.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            bookRoom_TotalPrice.Location = new Point(227, 454);
+            bookRoom_TotalPrice.Name = "bookRoom_TotalPrice";
+            bookRoom_TotalPrice.Size = new Size(54, 25);
+            bookRoom_TotalPrice.TabIndex = 39;
+            bookRoom_TotalPrice.Text = "0.00";
             // 
             // label14
             // 
@@ -201,15 +219,15 @@
             bookRoom_BookBtn.UseVisualStyleBackColor = false;
             bookRoom_BookBtn.Click += bookRoom_BookBtn_Click;
             // 
-            // label9
+            // bookRoom_roomStatus
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            label9.Location = new Point(131, 152);
-            label9.Name = "label9";
-            label9.Size = new Size(68, 18);
-            label9.TabIndex = 10;
-            label9.Text = "----------";
+            bookRoom_roomStatus.AutoSize = true;
+            bookRoom_roomStatus.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            bookRoom_roomStatus.Location = new Point(131, 152);
+            bookRoom_roomStatus.Name = "bookRoom_roomStatus";
+            bookRoom_roomStatus.Size = new Size(68, 18);
+            bookRoom_roomStatus.TabIndex = 10;
+            bookRoom_roomStatus.Text = "----------";
             // 
             // label10
             // 
@@ -221,15 +239,15 @@
             label10.TabIndex = 9;
             label10.Text = "Status:";
             // 
-            // label11
+            // bookRoom_roomName
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            label11.Location = new Point(131, 112);
-            label11.Name = "label11";
-            label11.Size = new Size(68, 18);
-            label11.TabIndex = 8;
-            label11.Text = "----------";
+            bookRoom_roomName.AutoSize = true;
+            bookRoom_roomName.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            bookRoom_roomName.Location = new Point(131, 112);
+            bookRoom_roomName.Name = "bookRoom_roomName";
+            bookRoom_roomName.Size = new Size(68, 18);
+            bookRoom_roomName.TabIndex = 8;
+            bookRoom_roomName.Text = "----------";
             // 
             // label12
             // 
@@ -241,15 +259,15 @@
             label12.TabIndex = 7;
             label12.Text = "Room Name:";
             // 
-            // label7
+            // bookRoom_roomType
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            label7.Location = new Point(131, 68);
-            label7.Name = "label7";
-            label7.Size = new Size(68, 18);
-            label7.TabIndex = 6;
-            label7.Text = "----------";
+            bookRoom_roomType.AutoSize = true;
+            bookRoom_roomType.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            bookRoom_roomType.Location = new Point(131, 68);
+            bookRoom_roomType.Name = "bookRoom_roomType";
+            bookRoom_roomType.Size = new Size(68, 18);
+            bookRoom_roomType.TabIndex = 6;
+            bookRoom_roomType.Text = "----------";
             // 
             // label8
             // 
@@ -261,15 +279,15 @@
             label8.TabIndex = 5;
             label8.Text = "Room Type:";
             // 
-            // label6
+            // bookRoom_roomId
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            label6.Location = new Point(131, 24);
-            label6.Name = "label6";
-            label6.Size = new Size(68, 18);
-            label6.TabIndex = 4;
-            label6.Text = "----------";
+            bookRoom_roomId.AutoSize = true;
+            bookRoom_roomId.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            bookRoom_roomId.Location = new Point(131, 24);
+            bookRoom_roomId.Name = "bookRoom_roomId";
+            bookRoom_roomId.Size = new Size(68, 18);
+            bookRoom_roomId.TabIndex = 4;
+            bookRoom_roomId.Text = "----------";
             // 
             // label4
             // 
@@ -284,33 +302,33 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
-            panel5.Controls.Add(pictureBox1);
+            panel5.Controls.Add(bookRoom_ImageView);
             panel5.Controls.Add(dataGridView1);
             panel5.Location = new Point(16, 430);
             panel5.Name = "panel5";
             panel5.Size = new Size(595, 258);
             panel5.TabIndex = 4;
             // 
-            // pictureBox1
+            // bookRoom_ImageView
             // 
-            pictureBox1.BackColor = Color.DarkGray;
-            pictureBox1.Location = new Point(16, 20);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(560, 222);
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            bookRoom_ImageView.BackColor = Color.DarkGray;
+            bookRoom_ImageView.Location = new Point(16, 20);
+            bookRoom_ImageView.Name = "bookRoom_ImageView";
+            bookRoom_ImageView.Size = new Size(560, 222);
+            bookRoom_ImageView.TabIndex = 6;
+            bookRoom_ImageView.TabStop = false;
             // 
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 242, 204);
-            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(216, 59, 113);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 242, 204);
+            dataGridViewCellStyle3.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(216, 59, 113);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(16, 20);
             dataGridView1.Name = "dataGridView1";
@@ -350,14 +368,14 @@
             // MainGrid
             // 
             MainGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 242, 204);
-            dataGridViewCellStyle2.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(216, 59, 113);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 242, 204);
+            dataGridViewCellStyle4.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(216, 59, 113);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             MainGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             MainGrid.Location = new Point(16, 52);
             MainGrid.Name = "MainGrid";
@@ -365,6 +383,7 @@
             MainGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             MainGrid.Size = new Size(560, 261);
             MainGrid.TabIndex = 25;
+            MainGrid.CellContentClick += MainGrid_CellContentClick;
             // 
             // label3
             // 
@@ -388,7 +407,7 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookRoom_ImageView).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
@@ -403,25 +422,27 @@
         private RoundedButton bookRoom_scheduleNowBtn;
         private Label label16;
         private Label label15;
-        private Label label13;
+        private Label bookRoom_TotalPrice;
         private Label label14;
         private RoundedButton bookRoom_BookBtn;
-        private Label label9;
+        private Label bookRoom_roomStatus;
         private Label label10;
-        private Label label11;
+        private Label bookRoom_roomName;
         private Label label12;
-        private Label label7;
+        private Label bookRoom_roomType;
         private Label label8;
-        private Label label6;
+        private Label bookRoom_roomId;
         private Label label4;
         private Panel panel5;
         private DataGridView dataGridView1;
         private Panel panel4;
         private DataGridView MainGrid;
         private Label label3;
-        private Label label1;
+        private Label bookRoom_roomPrice;
         private Label label2;
-        private PictureBox pictureBox1;
+        private PictureBox bookRoom_ImageView;
         private RoundedButton roundedButton1;
+        private DateTimePicker bookRoom_To;
+        private DateTimePicker bookRoom_From;
     }
 }
