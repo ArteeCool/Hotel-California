@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label5 = new Label();
             MainGrid = new DataGridView();
@@ -54,7 +54,7 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
+            //
             // panel1
             // 
             panel1.BackColor = Color.White;
@@ -63,7 +63,7 @@
             panel1.Location = new Point(17, 29);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1112, 516);
+            panel1.Size = new Size(978, 415);
             panel1.TabIndex = 0;
             // 
             // label5
@@ -79,21 +79,21 @@
             // MainGrid
             // 
             MainGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 242, 204);
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(216, 59, 113);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 242, 204);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(216, 59, 113);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             MainGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             MainGrid.Location = new Point(27, 76);
             MainGrid.Margin = new Padding(3, 4, 3, 4);
             MainGrid.Name = "MainGrid";
             MainGrid.RowHeadersWidth = 51;
             MainGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            MainGrid.Size = new Size(1056, 409);
+            MainGrid.Size = new Size(934, 308);
             MainGrid.TabIndex = 22;
             MainGrid.CellContentClick += MainGrid_CellContentClick;
             // 
@@ -114,10 +114,10 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(rooms_type);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(17, 576);
+            panel2.Location = new Point(17, 461);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1112, 356);
+            panel2.Size = new Size(978, 249);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
@@ -131,10 +131,10 @@
             rooms_clearBtn.FlatStyle = FlatStyle.Flat;
             rooms_clearBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rooms_clearBtn.ForeColor = Color.Purple;
-            rooms_clearBtn.Location = new Point(654, 267);
+            rooms_clearBtn.Location = new Point(616, 188);
             rooms_clearBtn.Margin = new Padding(3, 4, 3, 4);
             rooms_clearBtn.Name = "rooms_clearBtn";
-            rooms_clearBtn.Size = new Size(143, 57);
+            rooms_clearBtn.Size = new Size(125, 43);
             rooms_clearBtn.TabIndex = 38;
             rooms_clearBtn.Text = "Clear";
             rooms_clearBtn.UseVisualStyleBackColor = false;
@@ -150,10 +150,10 @@
             rooms_deleteBtn.FlatStyle = FlatStyle.Flat;
             rooms_deleteBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rooms_deleteBtn.ForeColor = Color.Purple;
-            rooms_deleteBtn.Location = new Point(462, 267);
+            rooms_deleteBtn.Location = new Point(438, 188);
             rooms_deleteBtn.Margin = new Padding(3, 4, 3, 4);
             rooms_deleteBtn.Name = "rooms_deleteBtn";
-            rooms_deleteBtn.Size = new Size(143, 57);
+            rooms_deleteBtn.Size = new Size(125, 43);
             rooms_deleteBtn.TabIndex = 37;
             rooms_deleteBtn.Text = "Delete";
             rooms_deleteBtn.UseVisualStyleBackColor = false;
@@ -169,10 +169,10 @@
             rooms_editBtn.FlatStyle = FlatStyle.Flat;
             rooms_editBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rooms_editBtn.ForeColor = Color.Purple;
-            rooms_editBtn.Location = new Point(266, 267);
+            rooms_editBtn.Location = new Point(254, 188);
             rooms_editBtn.Margin = new Padding(3, 4, 3, 4);
             rooms_editBtn.Name = "rooms_editBtn";
-            rooms_editBtn.Size = new Size(143, 57);
+            rooms_editBtn.Size = new Size(125, 43);
             rooms_editBtn.TabIndex = 36;
             rooms_editBtn.Text = "Edit";
             rooms_editBtn.UseVisualStyleBackColor = false;
@@ -188,10 +188,10 @@
             rooms_addBtn.FlatStyle = FlatStyle.Flat;
             rooms_addBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rooms_addBtn.ForeColor = Color.Purple;
-            rooms_addBtn.Location = new Point(75, 267);
+            rooms_addBtn.Location = new Point(75, 188);
             rooms_addBtn.Margin = new Padding(3, 4, 3, 4);
             rooms_addBtn.Name = "rooms_addBtn";
-            rooms_addBtn.Size = new Size(143, 57);
+            rooms_addBtn.Size = new Size(125, 43);
             rooms_addBtn.TabIndex = 35;
             rooms_addBtn.Text = "Add";
             rooms_addBtn.UseVisualStyleBackColor = false;
@@ -207,10 +207,10 @@
             rooms_importBtn.FlatStyle = FlatStyle.Flat;
             rooms_importBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rooms_importBtn.ForeColor = Color.Purple;
-            rooms_importBtn.Location = new Point(942, 228);
+            rooms_importBtn.Location = new Point(841, 151);
             rooms_importBtn.Margin = new Padding(3, 4, 3, 4);
             rooms_importBtn.Name = "rooms_importBtn";
-            rooms_importBtn.Size = new Size(142, 39);
+            rooms_importBtn.Size = new Size(120, 30);
             rooms_importBtn.TabIndex = 3;
             rooms_importBtn.Text = "Import";
             rooms_importBtn.UseVisualStyleBackColor = false;
@@ -219,10 +219,10 @@
             // 
             panel3.BackColor = Color.LightGray;
             panel3.Controls.Add(pictureBox1);
-            panel3.Location = new Point(942, 48);
+            panel3.Location = new Point(841, 14);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(142, 172);
+            panel3.Size = new Size(120, 129);
             panel3.TabIndex = 34;
             // 
             // pictureBox1
@@ -230,7 +230,7 @@
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(142, 172);
+            pictureBox1.Size = new Size(120, 129);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
@@ -325,7 +325,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "admin_rooms";
-            Size = new Size(1154, 952);
+            Size = new Size(1010, 714);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)MainGrid).EndInit();

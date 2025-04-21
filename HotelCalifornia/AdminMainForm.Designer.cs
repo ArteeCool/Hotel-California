@@ -35,7 +35,6 @@
             panel2 = new Panel();
             admin_addUserBtn = new Button();
             pictureBox1 = new PictureBox();
-            roundedButton1 = new RoundedButton();
             admin_logoutBtn = new RoundedButton();
             admin_customersBtn = new Button();
             admin_roomsBtn = new Button();
@@ -85,7 +84,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1443, 41);
+            panel1.Size = new Size(1268, 41);
             panel1.TabIndex = 0;
             // 
             // label11
@@ -93,7 +92,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Purple;
-            label11.Location = new Point(1337, 9);
+            label11.Location = new Point(1168, 9);
             label11.Name = "label11";
             label11.Size = new Size(66, 21);
             label11.TabIndex = 4;
@@ -116,7 +115,7 @@
             close.Cursor = Cursors.Hand;
             close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             close.ForeColor = Color.Purple;
-            close.Location = new Point(1409, 8);
+            close.Location = new Point(1240, 8);
             close.Name = "close";
             close.Size = new Size(22, 23);
             close.TabIndex = 1;
@@ -130,7 +129,6 @@
             panel2.BackColor = Color.FromArgb(255, 242, 204);
             panel2.Controls.Add(admin_addUserBtn);
             panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(roundedButton1);
             panel2.Controls.Add(admin_logoutBtn);
             panel2.Controls.Add(admin_customersBtn);
             panel2.Controls.Add(admin_roomsBtn);
@@ -139,7 +137,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 41);
             panel2.Name = "panel2";
-            panel2.Size = new Size(250, 946);
+            panel2.Size = new Size(250, 714);
             panel2.TabIndex = 1;
             // 
             // admin_addUserBtn
@@ -170,24 +168,6 @@
             pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
             // 
-            // roundedButton1
-            // 
-            roundedButton1.BackColor = Color.FromArgb(255, 242, 204);
-            roundedButton1.Cursor = Cursors.Hand;
-            roundedButton1.FlatAppearance.BorderColor = Color.FromArgb(216, 59, 113);
-            roundedButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            roundedButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roundedButton1.ForeColor = Color.Purple;
-            roundedButton1.Location = new Point(38, 893);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(182, 37);
-            roundedButton1.TabIndex = 15;
-            roundedButton1.Text = "Logout";
-            roundedButton1.UseVisualStyleBackColor = false;
-            roundedButton1.Click += admin_logoutBtn_Click;
-            // 
             // admin_logoutBtn
             // 
             admin_logoutBtn.BackColor = Color.FromArgb(255, 242, 204);
@@ -196,9 +176,9 @@
             admin_logoutBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
             admin_logoutBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
             admin_logoutBtn.FlatStyle = FlatStyle.Flat;
-            admin_logoutBtn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            admin_logoutBtn.Font = new Font("Arial Rounded MT Bold", 13.8F);
             admin_logoutBtn.ForeColor = Color.Purple;
-            admin_logoutBtn.Location = new Point(38, 893);
+            admin_logoutBtn.Location = new Point(27, 653);
             admin_logoutBtn.Name = "admin_logoutBtn";
             admin_logoutBtn.Size = new Size(182, 37);
             admin_logoutBtn.TabIndex = 15;
@@ -282,7 +262,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(250, 41);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1193, 946);
+            panel3.Size = new Size(1018, 714);
             panel3.TabIndex = 2;
             panel3.Paint += panel3_Paint_1;
             // 
@@ -290,9 +270,8 @@
             // 
             admin_rooms1.Location = new Point(0, 0);
             admin_rooms1.Name = "admin_rooms1";
-            admin_rooms1.Size = new Size(1143, 943);
-            admin_rooms1.TabIndex = 16;
-            admin_rooms1.Load += admin_rooms1_Load;
+            admin_rooms1.Size = new Size(1018, 714);
+            admin_rooms1.TabIndex = 15;
             // 
             // panel7
             // 
@@ -490,7 +469,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1443, 987);
+            ClientSize = new Size(1268, 755);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -554,8 +533,7 @@
         private Label label9;
         private Label label10;
         private Button admin_addUserBtn;
-        private admin_rooms admin_rooms1;
         private Label label11;
-        private RoundedButton roundedButton1;
+        private admin_rooms admin_rooms1;
     }
 }

@@ -78,14 +78,14 @@ namespace HotelCalifornia
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            // Пустой обработчик события
+            
         }
 
         private void rooms_addBtn_Click(object sender, EventArgs e)
         {
             if (_isEditing)
             {
-                // Редактирование существующей комнаты
+                
                 var updatedRoom = GetRoomInput();
                 if (updatedRoom == null) return;
 
@@ -103,7 +103,7 @@ namespace HotelCalifornia
             }
             else
             {
-                // Добавление новой комнаты
+                
                 var newRoom = GetRoomInput();
                 if (newRoom == null) return;
 
@@ -121,7 +121,7 @@ namespace HotelCalifornia
 
         private void MainGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Пустой обработчик события
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -131,22 +131,22 @@ namespace HotelCalifornia
 
         private void rooms_roomName_TextChanged(object sender, EventArgs e)
         {
-            // Пустой обработчик события
+            
         }
 
         private void rooms_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Пустой обработчик события
+            
         }
 
         private void rooms_price_TextChanged(object sender, EventArgs e)
         {
-            // Пустой обработчик события
+            
         }
 
         private void rooms_status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Пустой обработчик события
+            
         }
 
         private void ClearFields()
