@@ -66,7 +66,7 @@ namespace HotelCalifornia
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(216, 59, 113);
-            label5.Location = new Point(115, 291);
+            label5.Location = new Point(106, 291);
             label5.Name = "label5";
             label5.Size = new Size(184, 29);
             label5.TabIndex = 9;
@@ -77,7 +77,7 @@ namespace HotelCalifornia
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(216, 59, 113);
-            label6.Location = new Point(80, 488);
+            label6.Location = new Point(104, 493);
             label6.Name = "label6";
             label6.Size = new Size(186, 25);
             label6.TabIndex = 10;

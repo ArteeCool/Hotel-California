@@ -7,10 +7,12 @@ namespace HotelCalifornia
     {
         private const String PathToFile = "user.json";
         private Repository<User> _usersData = new(new JsonStorage<User>(PathToFile));
+        private readonly AuthService _authService;
 
         public LoginForm()
         {
             InitializeComponent();
+            _authService = new AuthService(_usersData);
         }
 
         private void close_Click(Object sender, EventArgs e)
@@ -34,9 +36,31 @@ namespace HotelCalifornia
 
         private void login_btn_Click_1(Object sender, EventArgs e)
         {
-            Login();
-        }
+            string login = login_username.Text.Trim();
+            string password = login_password.Text.Trim();
 
+            var (success, user, errorMessage) = _authService.Login(login, password);
+
+            if (!success)
+            {
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (user.IsAdmin)
+            {
+                var adminMainForm = new AdminMainForm();
+                adminMainForm.Show();
+            }
+            else
+            {
+                var staffForm = new staffMainForm();
+                staffForm.Show();
+            }
+
+            Hide();
+        }
+        /*
         private User GetNewUser()
         {
             return new User(login_username.Text.Trim(), login_password.Text.Trim(), false, "");
@@ -66,7 +90,7 @@ namespace HotelCalifornia
                 MessageBox.Show("Wrong login or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        */
 
         private void close_MouseEnter(Object sender, EventArgs e)
         {
