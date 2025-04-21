@@ -49,11 +49,6 @@ namespace HotelCalifornia
             staff_bookRoom1.Controls.Add(adminBookRoom);
         }
 
-        private void staff_roomsBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void close_Click(object sender, EventArgs e)
         {
             Application.Exit();

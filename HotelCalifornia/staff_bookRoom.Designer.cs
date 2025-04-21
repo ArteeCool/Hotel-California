@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel6 = new Panel();
             label1 = new Label();
             label2 = new Label();
             bookRoom_clearBtn = new RoundedButton();
-            bookRoom_printBtn = new RoundedButton();
             bookRoom_scheduleNowBtn = new RoundedButton();
             label16 = new Label();
             label15 = new Label();
@@ -53,9 +52,9 @@
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
+            roundedButton1 = new RoundedButton();
             MainGrid = new DataGridView();
             label3 = new Label();
-            roundedButton1 = new RoundedButton();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -70,7 +69,6 @@
             panel6.Controls.Add(label1);
             panel6.Controls.Add(label2);
             panel6.Controls.Add(bookRoom_clearBtn);
-            panel6.Controls.Add(bookRoom_printBtn);
             panel6.Controls.Add(bookRoom_scheduleNowBtn);
             panel6.Controls.Add(label16);
             panel6.Controls.Add(label15);
@@ -127,23 +125,6 @@
             bookRoom_clearBtn.Text = "Clear";
             bookRoom_clearBtn.UseVisualStyleBackColor = false;
             // 
-            // bookRoom_printBtn
-            // 
-            bookRoom_printBtn.BackColor = Color.FromArgb(255, 242, 204);
-            bookRoom_printBtn.Cursor = Cursors.Hand;
-            bookRoom_printBtn.FlatAppearance.BorderSize = 0;
-            bookRoom_printBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            bookRoom_printBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            bookRoom_printBtn.FlatStyle = FlatStyle.Flat;
-            bookRoom_printBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookRoom_printBtn.ForeColor = Color.Purple;
-            bookRoom_printBtn.Location = new Point(53, 535);
-            bookRoom_printBtn.Name = "bookRoom_printBtn";
-            bookRoom_printBtn.Size = new Size(258, 43);
-            bookRoom_printBtn.TabIndex = 43;
-            bookRoom_printBtn.Text = "Print";
-            bookRoom_printBtn.UseVisualStyleBackColor = false;
-            // 
             // bookRoom_scheduleNowBtn
             // 
             bookRoom_scheduleNowBtn.BackColor = Color.FromArgb(255, 242, 204);
@@ -154,7 +135,7 @@
             bookRoom_scheduleNowBtn.FlatStyle = FlatStyle.Flat;
             bookRoom_scheduleNowBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bookRoom_scheduleNowBtn.ForeColor = Color.Purple;
-            bookRoom_scheduleNowBtn.Location = new Point(53, 336);
+            bookRoom_scheduleNowBtn.Location = new Point(53, 388);
             bookRoom_scheduleNowBtn.Name = "bookRoom_scheduleNowBtn";
             bookRoom_scheduleNowBtn.Size = new Size(258, 43);
             bookRoom_scheduleNowBtn.TabIndex = 42;
@@ -166,7 +147,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label16.Location = new Point(30, 299);
+            label16.Location = new Point(30, 314);
             label16.Name = "label16";
             label16.Size = new Size(95, 18);
             label16.TabIndex = 41;
@@ -176,7 +157,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label15.Location = new Point(12, 262);
+            label15.Location = new Point(12, 277);
             label15.Name = "label15";
             label15.Size = new Size(113, 18);
             label15.TabIndex = 40;
@@ -186,7 +167,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label13.Location = new Point(227, 402);
+            label13.Location = new Point(227, 454);
             label13.Name = "label13";
             label13.Size = new Size(54, 25);
             label13.TabIndex = 39;
@@ -196,7 +177,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Microsoft Sans Serif", 12F);
-            label14.Location = new Point(80, 402);
+            label14.Location = new Point(80, 454);
             label14.Name = "label14";
             label14.Size = new Size(141, 25);
             label14.TabIndex = 38;
@@ -212,7 +193,7 @@
             bookRoom_BookBtn.FlatStyle = FlatStyle.Flat;
             bookRoom_BookBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bookRoom_BookBtn.ForeColor = Color.Purple;
-            bookRoom_BookBtn.Location = new Point(53, 470);
+            bookRoom_BookBtn.Location = new Point(53, 529);
             bookRoom_BookBtn.Name = "bookRoom_BookBtn";
             bookRoom_BookBtn.Size = new Size(258, 43);
             bookRoom_BookBtn.TabIndex = 37;
@@ -322,14 +303,14 @@
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 242, 204);
-            dataGridViewCellStyle3.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(216, 59, 113);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 242, 204);
+            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(216, 59, 113);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(16, 20);
             dataGridView1.Name = "dataGridView1";
@@ -349,17 +330,34 @@
             panel4.Size = new Size(595, 379);
             panel4.TabIndex = 3;
             // 
+            // roundedButton1
+            // 
+            roundedButton1.BackColor = Color.FromArgb(255, 242, 204);
+            roundedButton1.Cursor = Cursors.Hand;
+            roundedButton1.FlatAppearance.BorderSize = 0;
+            roundedButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            roundedButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
+            roundedButton1.FlatStyle = FlatStyle.Flat;
+            roundedButton1.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            roundedButton1.ForeColor = Color.Purple;
+            roundedButton1.Location = new Point(16, 319);
+            roundedButton1.Name = "roundedButton1";
+            roundedButton1.Size = new Size(171, 48);
+            roundedButton1.TabIndex = 43;
+            roundedButton1.Text = "Check Room";
+            roundedButton1.UseVisualStyleBackColor = false;
+            // 
             // MainGrid
             // 
             MainGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 242, 204);
-            dataGridViewCellStyle4.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(216, 59, 113);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 242, 204);
+            dataGridViewCellStyle2.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(216, 59, 113);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             MainGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             MainGrid.Location = new Point(16, 52);
             MainGrid.Name = "MainGrid";
@@ -377,23 +375,6 @@
             label3.Size = new Size(171, 23);
             label3.TabIndex = 24;
             label3.Text = "Available Rooms";
-            // 
-            // roundedButton1
-            // 
-            roundedButton1.BackColor = Color.FromArgb(255, 242, 204);
-            roundedButton1.Cursor = Cursors.Hand;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            roundedButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roundedButton1.ForeColor = Color.Purple;
-            roundedButton1.Location = new Point(16, 319);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(171, 48);
-            roundedButton1.TabIndex = 43;
-            roundedButton1.Text = "Check Room";
-            roundedButton1.UseVisualStyleBackColor = false;
             // 
             // staff_bookRoom
             // 
@@ -419,7 +400,6 @@
 
         private Panel panel6;
         private RoundedButton bookRoom_clearBtn;
-        private RoundedButton bookRoom_printBtn;
         private RoundedButton bookRoom_scheduleNowBtn;
         private Label label16;
         private Label label15;

@@ -44,7 +44,6 @@
             pictureBox2 = new PictureBox();
             staff_logoutBtn = new RoundedButton();
             staff_customersBtn = new Button();
-            staff_roomsBtn = new Button();
             staff_dashboardBtn = new Button();
             label2 = new Label();
             panel3 = new Panel();
@@ -219,7 +218,6 @@
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(staff_logoutBtn);
             panel2.Controls.Add(staff_customersBtn);
-            panel2.Controls.Add(staff_roomsBtn);
             panel2.Controls.Add(staff_dashboardBtn);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Left;
@@ -292,25 +290,6 @@
             staff_customersBtn.Text = "Customers";
             staff_customersBtn.UseVisualStyleBackColor = false;
             staff_customersBtn.Click += staff_customersBtn_Click;
-            // 
-            // staff_roomsBtn
-            // 
-            staff_roomsBtn.BackColor = Color.FromArgb(255, 242, 204);
-            staff_roomsBtn.Cursor = Cursors.Hand;
-            staff_roomsBtn.FlatAppearance.BorderColor = SystemColors.GradientInactiveCaption;
-            staff_roomsBtn.FlatAppearance.BorderSize = 0;
-            staff_roomsBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            staff_roomsBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            staff_roomsBtn.FlatStyle = FlatStyle.Flat;
-            staff_roomsBtn.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            staff_roomsBtn.ForeColor = Color.Purple;
-            staff_roomsBtn.Location = new Point(19, 440);
-            staff_roomsBtn.Name = "staff_roomsBtn";
-            staff_roomsBtn.Size = new Size(207, 37);
-            staff_roomsBtn.TabIndex = 12;
-            staff_roomsBtn.Text = "Available Rooms";
-            staff_roomsBtn.UseVisualStyleBackColor = false;
-            staff_roomsBtn.Click += staff_roomsBtn_Click;
             // 
             // staff_dashboardBtn
             // 
@@ -405,7 +384,6 @@
         private PictureBox pictureBox2;
         private RoundedButton staff_logoutBtn;
         private Button staff_customersBtn;
-        private Button staff_roomsBtn;
         private Button staff_dashboardBtn;
         private Label label2;
         private Panel panel3;
