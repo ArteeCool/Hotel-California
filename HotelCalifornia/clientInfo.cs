@@ -53,7 +53,19 @@ namespace HotelCalifornia
                 contactNumber: clientInfo_number.Text
                 );
 
+            if (_guestService == null)
+            {
+                MessageBox.Show("Guest service is not available.");
+                return;
+            }
+
             string guestId = _guestService.FindOrCreateGuest(guest);
+
+            if (_bookingService == null)
+            {
+                MessageBox.Show("Booking service is not available.");
+                return;
+            }
 
             //создание брони
             bool success = _bookingService.BookRoom(roomId: _roomId,

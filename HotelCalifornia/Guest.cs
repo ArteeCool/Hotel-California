@@ -13,8 +13,8 @@ namespace HotelCalifornia
         public String Phone { get; set; }
 
         [JsonConstructor]
-        public Guest(string fullName = null, string gender = null, string email = null,
-             string address = null, string contactNumber = null, string id = null)
+        public Guest(string fullName, string gender, string email,
+             string address, string contactNumber, string id = null)
         {
             FullName = fullName;
             Gender = gender;

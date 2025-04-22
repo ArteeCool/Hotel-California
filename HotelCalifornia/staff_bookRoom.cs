@@ -13,16 +13,22 @@ namespace HotelCalifornia
 {
     public partial class staff_bookRoom : UserControl
     {
-        private const string PathToFile = "rooms.json";
+        private const string PathToRooms = "rooms.json";
+        private const string PathToGuests = "guests.json";
+        private const string PathToBookings = "bookings.json";
         private readonly RoomService _roomService;
         private readonly BookingService _bookingService;
         private readonly GuestService _guestService;
         private readonly decimal _totalPrice;
         private string _selectedRoomId; //ID вибраної кімнати
+        
         public staff_bookRoom()
         {
             InitializeComponent();
-            _roomService = new RoomService(new Repository<Room>(new JsonStorage<Room>(PathToFile)));
+            var roomRepo = new Repository<Room>(new JsonStorage<Room>(PathToRooms));
+            _roomService = new RoomService(roomRepo);
+            _guestService = new GuestService(new Repository<Guest>(new JsonStorage<Guest>(PathToGuests)));
+            _bookingService = new BookingService(new Repository<Booking>(new JsonStorage<Booking>(PathToBookings)), roomRepo);
             InitializeGrid();
             FillRooms();
         }

@@ -17,9 +17,16 @@ public class JsonStorage<T> : IDataStorage<T> where T : IEntity
     private List<T> LoadFromFile()
     {
         if (!File.Exists(_filePath))
-            return [];
-        var json = File.ReadAllText(_filePath);
-        return JsonSerializer.Deserialize<List<T>>(json) ?? [];
+            return new List<T>();
+
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            IncludeFields = true // Если используете поля
+        };
+
+        string json = File.ReadAllText(_filePath);
+        return JsonSerializer.Deserialize<List<T>>(json, options) ?? new List<T>();
     }
     
     public void Add(T entity)
