@@ -8,7 +8,6 @@ namespace HotelCalifornia
         private const String PathToFile = "user.json";
         private Repository<User> _usersData = new(new JsonStorage<User>(PathToFile));
         private readonly AuthService _authService;
-
         public LoginForm()
         {
             InitializeComponent();
@@ -47,50 +46,28 @@ namespace HotelCalifornia
                 return;
             }
 
+            // Инициализация репозиториев
+            var bookingRepository = new Repository<Booking>(new JsonStorage<Booking>("bookings.json"));
+            var roomRepository = new Repository<Room>(new JsonStorage<Room>("rooms.json"));
+            var guestRepository = new Repository<Guest>(new JsonStorage<Guest>("guests.json"));
+
+            // Инициализация сервисов
+            var bookingService = new BookingService(bookingRepository, roomRepository);
+            var guestService = new GuestService(guestRepository);
+
             if (user.IsAdmin)
             {
-                var adminMainForm = new AdminMainForm();
+                var adminMainForm = new AdminMainForm(bookingService, guestService);
                 adminMainForm.Show();
             }
             else
             {
-                var staffForm = new staffMainForm();
+                var staffForm = new staffMainForm(bookingService, guestService);
                 staffForm.Show();
             }
 
             Hide();
         }
-        /*
-        private User GetNewUser()
-        {
-            return new User(login_username.Text.Trim(), login_password.Text.Trim(), false, "");
-        }
-
-        private void Login()
-        {
-            var user = GetNewUser();
-            var loginUser = _usersData.Read().FirstOrDefault(item => item.Login == user.Login);
-            if (loginUser != null && BCrypt.Net.BCrypt.EnhancedVerify(user.Password, loginUser.Password))
-            {
-                if (loginUser.IsAdmin)
-                {
-                    var adminMainForm = new AdminMainForm();
-                    adminMainForm.Show();
-                }
-                else
-                {
-                    var staffForm = new staffMainForm();
-                    staffForm.Show();
-                }
-
-                Hide();
-            }
-            else
-            {
-                MessageBox.Show("Wrong login or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        */
 
         private void close_MouseEnter(Object sender, EventArgs e)
         {

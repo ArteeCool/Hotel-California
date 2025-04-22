@@ -71,9 +71,9 @@ namespace HotelCalifornia
                 return;
             }
 
-        //    decimal totalPrice = _bookingService.CalculateBookingPrice(pricePerNight, fromDate, toDate);
+            decimal Price = _bookingService.CalculateBookingPrice(pricePerNight, fromDate, toDate);
 
-            bookRoom_TotalPrice.Text = _totalPrice.ToString();
+            bookRoom_TotalPrice.Text = Price.ToString();
         }
 
         private void bookRoom_BookBtn_Click(object sender, EventArgs e)
@@ -104,7 +104,6 @@ namespace HotelCalifornia
             if (bookingForm.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Booking created successfully!");
-                // Можно обновить список комнат
                 FillRooms();
             }
         }
@@ -122,6 +121,7 @@ namespace HotelCalifornia
                         r.Type == row.Cells["Type"].Value?.ToString()
                     )?.Id;
 
+                bookRoom_roomId.Text = row.Cells["Id"].Value?.ToString();
                 bookRoom_roomType.Text = row.Cells["Type"].Value?.ToString();
                 bookRoom_roomName.Text = row.Cells["Name"].Value?.ToString();
                 bookRoom_roomPrice.Text = row.Cells["Price"].Value?.ToString();

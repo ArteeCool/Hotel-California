@@ -13,14 +13,6 @@ namespace HotelCalifornia
     {
         _repository = repository;
     }
-
-    //public string CreateGuest(Guest guest)
-    //{
-    //    _repository.Create(guest);
-    //    _repository.Save();//мб не нужно
-    //    return guest.Id;
-    //}
-
         public string FindOrCreateGuest(Guest guest)
         {
             var existingGuest = _repository.Read()
@@ -34,5 +26,6 @@ namespace HotelCalifornia
             return guest.Id;
         }
 
+        public IRepository<Guest> GetRepository() => _repository;
     }
 }

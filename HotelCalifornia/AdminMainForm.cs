@@ -2,9 +2,13 @@
 {
     public partial class AdminMainForm : Form
     {
-        public AdminMainForm()
+        private BookingService _bookingService;
+        private GuestService _guestService;
+        public AdminMainForm(BookingService bookingService, GuestService guestService)
         {
             InitializeComponent();
+            _bookingService = bookingService;
+            _guestService = guestService;
         }
 
 
@@ -76,7 +80,7 @@
 
         private void admin_customersBtn_Click(object sender, EventArgs e)
         {
-            admin_customers adminCustomers = new admin_customers();
+            admin_customers adminCustomers = new admin_customers(_bookingService, _guestService);
             admin_rooms1.Controls.Clear();
             admin_rooms1.Controls.Add(adminCustomers);
         }

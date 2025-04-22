@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Windows.Forms;
+using HotelCalifornia.Models;
+
 namespace HotelCalifornia
 {
     public class BookingService
@@ -71,5 +74,40 @@ namespace HotelCalifornia
             int nights = (toDate.Date - fromDate.Date).Days;
             return nights < 0 ? 0 : nights * pricePerNight;
         }
+
+        public List<Booking> GetAllBookings()
+        {
+            return _bookingRepository.GetAll();
+        }
+
+        public List<GuestBookingInfo> GetDetailedBookings(IRepository<Guest> guestRepository)
+        {
+            var bookings = _bookingRepository.GetAll();
+            var result = new List<GuestBookingInfo>();
+
+            foreach (var booking in bookings)
+            {
+                var guest = guestRepository.GetById(booking.GuestId);
+                var room = _roomRepository.GetById(booking.RoomId);
+
+                if (guest != null && room != null)
+                {
+                    result.Add(new GuestBookingInfo
+                    {
+                        GuestName = guest.FullName,
+                        GuestEmail = guest.Email,
+                        RoomName = room.Name,
+                        RoomType = room.Type,
+                        FromDate = booking.FromDate,
+                        ToDate = booking.ToDate,
+                        TotalPrice = booking.TotalPrice
+                    });
+                }
+            }
+
+            return result;
+        }
+
+
     }
 }

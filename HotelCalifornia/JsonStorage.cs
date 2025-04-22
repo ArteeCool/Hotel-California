@@ -33,6 +33,7 @@ public class JsonStorage<T> : IDataStorage<T> where T : IEntity
     {
         entity.Id = _items.Count != 0 ? _items.Max(e => e.Id) + 1 : "1";
         _items.Add(entity);
+        Save();
     }
     
     public void Update(T entity)

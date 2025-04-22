@@ -30,14 +30,15 @@
         {
             panel2 = new Panel();
             label3 = new Label();
-            panel1 = new Panel();
+            MainGrid = new DataGridView();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MainGrid).BeginInit();
             SuspendLayout();
             // 
             // panel2
             // 
+            panel2.Controls.Add(MainGrid);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(panel1);
             panel2.Location = new Point(13, 16);
             panel2.Name = "panel2";
             panel2.Size = new Size(980, 681);
@@ -53,13 +54,15 @@
             label3.TabIndex = 25;
             label3.Text = "All Customers";
             // 
-            // panel1
+            // MainGrid
             // 
-            panel1.BackColor = Color.DarkGray;
-            panel1.Location = new Point(19, 55);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(944, 607);
-            panel1.TabIndex = 1;
+            MainGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MainGrid.Location = new Point(19, 54);
+            MainGrid.Name = "MainGrid";
+            MainGrid.RowHeadersWidth = 51;
+            MainGrid.Size = new Size(944, 607);
+            MainGrid.TabIndex = 26;
+            MainGrid.CellContentClick += MainGrid_CellContentClick;
             // 
             // admin_customers
             // 
@@ -72,13 +75,14 @@
             MouseMove += Admin_Customers_MouseMove;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MainGrid).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel2;
-        private Panel panel1;
         private Label label3;
+        private DataGridView MainGrid;
     }
 }

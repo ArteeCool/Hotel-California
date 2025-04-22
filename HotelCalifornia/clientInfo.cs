@@ -46,11 +46,12 @@ namespace HotelCalifornia
 
         private void bookRoom_scheduleNow_BookBtn_Click(object sender, EventArgs e)
         {
-            var guest = new Guest(fullName: clientInfo_name.Text,
+            var guest = new Guest(id: "",
+                fullName: clientInfo_name.Text,
                 gender: clientInfo_gender.Text,
                 email: clientInfo_email.Text,
                 address: clientInfo_adress.Text,
-                contactNumber: clientInfo_number.Text
+                phone: clientInfo_number.Text
                 );
 
             if (_guestService == null)
@@ -69,11 +70,25 @@ namespace HotelCalifornia
 
             //создание брони
             bool success = _bookingService.BookRoom(roomId: _roomId,
-                guestId: guest.Id, //ID из конструктора Guest(остальное через ID подтянется)
+                guestId: guestId, //ID из конструктора Guest(остальное через ID подтянется)
                 fromDate: _fromDate,
                 toDate: _toDate
             );
 
+            if (success)
+            {
+                if (this.Parent?.Parent is admin_customers mainForm)
+                {
+                    mainForm.RefreshGuestList();
+                }
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Booking failed.");
+            }
         }
     }
 }

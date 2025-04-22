@@ -34,5 +34,14 @@
         {
             _storage?.Save();
         }
+
+        public List<T> GetAll()
+        {
+            return _storage.GetAll(); 
+        }
+        public T GetById(string id)
+        {
+            return _storage.GetAll().FirstOrDefault(e => e.Id == id);
+        }
     }
 }

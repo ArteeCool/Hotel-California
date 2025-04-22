@@ -12,9 +12,13 @@ namespace HotelCalifornia
 {
     public partial class staffMainForm : Form
     {
-        public staffMainForm()
+        private BookingService _bookingService;
+        private GuestService _guestService;
+        public staffMainForm(BookingService bookingService, GuestService guestService)
         {
             InitializeComponent();
+            _bookingService = bookingService;
+            _guestService = guestService;
         }
 
         private void staff_logoutBtn_Click(object sender, EventArgs e)
@@ -37,7 +41,7 @@ namespace HotelCalifornia
 
         private void staff_customersBtn_Click(object sender, EventArgs e)
         {
-            admin_customers adminCustomers = new admin_customers();
+            admin_customers adminCustomers = new admin_customers(_bookingService, _guestService);
             staff_bookRoom1.Controls.Clear();
             staff_bookRoom1.Controls.Add(adminCustomers);
         }

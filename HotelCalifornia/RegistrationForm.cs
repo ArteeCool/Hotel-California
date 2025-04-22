@@ -46,8 +46,17 @@ namespace HotelCalifornia
                 return;
             }
 
-            // Успешная регистрация
-            var staffMainForm = new staffMainForm();
+            // Инициализация репозиториев
+            var bookingRepository = new Repository<Booking>(new JsonStorage<Booking>("bookings.json"));
+            var roomRepository = new Repository<Room>(new JsonStorage<Room>("rooms.json"));
+            var guestRepository = new Repository<Guest>(new JsonStorage<Guest>("guests.json"));
+
+            // Инициализация сервисов
+            var bookingService = new BookingService(bookingRepository, roomRepository);
+            var guestService = new GuestService(guestRepository);
+
+            // Передача сервисов в конструктор формы
+            var staffMainForm = new staffMainForm(bookingService, guestService);
             staffMainForm.Show();
             Hide();
         }
@@ -56,42 +65,6 @@ namespace HotelCalifornia
         {
             return new User(register_username.Text, register_password.Text.Trim(), false, String.Empty);
         }
-        /*
-        private void Register()
-        {
-            var user = GetNewUser();
-    
-            var errorMessage = String.Empty;
-
-            if (String.IsNullOrWhiteSpace(user.Login) || user.Login.Length < 6)
-                errorMessage = "Login must be at least 6 characters.";
-            else if (_usersData.Read().Any(item => item.Login.Trim() == user.Login.Trim()))
-                errorMessage = "Current login is taken.";
-            else if (String.IsNullOrWhiteSpace(user.Password) || user.Password.Length < 6)
-                errorMessage = "Password must be at least 6 characters.";
-            else if (user.Password != register_confirmPassword.Text.Trim())
-                errorMessage = "Passwords do not match.";
-    
-            if (!String.IsNullOrEmpty(errorMessage))
-            {
-                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            user.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(register_password.Text.Trim());
-            _usersData.Create(user);
-            
-            var json = JsonSerializer.Serialize(user);
-            
-            var staffMainForm = new staffMainForm();
-            staffMainForm.Show();
-            
-            _usersData.Save();
-    
-            Hide();
-        }
-       */
-
         private void close_MouseEnter(Object sender, EventArgs e)
         {
             close.ForeColor = Color.Red;
