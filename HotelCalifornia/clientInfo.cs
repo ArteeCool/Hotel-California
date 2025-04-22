@@ -46,11 +46,12 @@ namespace HotelCalifornia
 
         private void bookRoom_scheduleNow_BookBtn_Click(object sender, EventArgs e)
         {
-            var guest = new Guest(fullName: clientInfo_name.Text,
+            var guest = new Guest("",
+                fullName: clientInfo_name.Text,
                 gender: clientInfo_gender.Text,
                 email: clientInfo_email.Text,
                 address: clientInfo_adress.Text,
-                contactNumber: clientInfo_number.Text
+                phone: clientInfo_number.Text
                 );
 
             if (_guestService == null)

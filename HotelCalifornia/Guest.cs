@@ -13,14 +13,14 @@ namespace HotelCalifornia
         public String Phone { get; set; }
 
         [JsonConstructor]
-        public Guest(string fullName, string gender, string email,
-             string address, string contactNumber, string id = null)
+        public Guest(string id, string fullName, string gender,
+             string email, string address, string phone)
         {
             FullName = fullName;
             Gender = gender;
             Email = email;
             Address = address;
-            Phone = contactNumber;
+            Phone = phone;
             Id = String.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
         }
 
