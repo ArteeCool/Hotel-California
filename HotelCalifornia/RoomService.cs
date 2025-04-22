@@ -53,5 +53,10 @@ namespace HotelCalifornia
         {
             return _repository.Read();
         }
+
+        public int GetRoomPrice(string roomId)
+        {
+            return GetAllRooms().First(r => r.Id == roomId).Price;
+        }
     }
 }

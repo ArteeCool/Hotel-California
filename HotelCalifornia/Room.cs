@@ -21,10 +21,7 @@ namespace HotelCalifornia
             Id = String.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
         }
 
-        public String GetId()
-        {
-            return Id;
-        }
+        public string GetId() => Id;
     }
 }
 

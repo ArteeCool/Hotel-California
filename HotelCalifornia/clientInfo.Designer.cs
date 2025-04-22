@@ -33,19 +33,19 @@
             label1 = new Label();
             close = new Label();
             panel2 = new Panel();
-            roundedButton1 = new RoundedButton();
-            rooms_addBtn = new RoundedButton();
-            textBox4 = new TextBox();
+            bookRoom_scheduleNow_ClearBtn = new RoundedButton();
+            bookRoom_scheduleNow_BookBtn = new RoundedButton();
+            clientInfo_adress = new TextBox();
             label9 = new Label();
-            comboBox1 = new ComboBox();
+            clientInfo_gender = new ComboBox();
             label8 = new Label();
-            textBox3 = new TextBox();
+            clientInfo_email = new TextBox();
             label7 = new Label();
-            textBox2 = new TextBox();
+            clientInfo_number = new TextBox();
             label6 = new Label();
-            textBox1 = new TextBox();
+            clientInfo_name = new TextBox();
             label5 = new Label();
-            label4 = new Label();
+            clientInfo_Id = new Label();
             label3 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -104,67 +104,68 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(roundedButton1);
-            panel2.Controls.Add(rooms_addBtn);
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(bookRoom_scheduleNow_ClearBtn);
+            panel2.Controls.Add(bookRoom_scheduleNow_BookBtn);
+            panel2.Controls.Add(clientInfo_adress);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(clientInfo_gender);
             panel2.Controls.Add(label8);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(clientInfo_email);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(clientInfo_number);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(clientInfo_name);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
+            panel2.Controls.Add(clientInfo_Id);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(16, 58);
             panel2.Name = "panel2";
             panel2.Size = new Size(787, 467);
             panel2.TabIndex = 3;
             // 
-            // roundedButton1
+            // bookRoom_scheduleNow_ClearBtn
             // 
-            roundedButton1.BackColor = Color.FromArgb(255, 242, 204);
-            roundedButton1.Cursor = Cursors.Hand;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            roundedButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roundedButton1.ForeColor = Color.Purple;
-            roundedButton1.Location = new Point(452, 347);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(280, 43);
-            roundedButton1.TabIndex = 37;
-            roundedButton1.Text = "Clear";
-            roundedButton1.UseVisualStyleBackColor = false;
+            bookRoom_scheduleNow_ClearBtn.BackColor = Color.FromArgb(255, 242, 204);
+            bookRoom_scheduleNow_ClearBtn.Cursor = Cursors.Hand;
+            bookRoom_scheduleNow_ClearBtn.FlatAppearance.BorderSize = 0;
+            bookRoom_scheduleNow_ClearBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            bookRoom_scheduleNow_ClearBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
+            bookRoom_scheduleNow_ClearBtn.FlatStyle = FlatStyle.Flat;
+            bookRoom_scheduleNow_ClearBtn.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookRoom_scheduleNow_ClearBtn.ForeColor = Color.Purple;
+            bookRoom_scheduleNow_ClearBtn.Location = new Point(452, 347);
+            bookRoom_scheduleNow_ClearBtn.Name = "bookRoom_scheduleNow_ClearBtn";
+            bookRoom_scheduleNow_ClearBtn.Size = new Size(280, 52);
+            bookRoom_scheduleNow_ClearBtn.TabIndex = 37;
+            bookRoom_scheduleNow_ClearBtn.Text = "Clear";
+            bookRoom_scheduleNow_ClearBtn.UseVisualStyleBackColor = false;
             // 
-            // rooms_addBtn
+            // bookRoom_scheduleNow_BookBtn
             // 
-            rooms_addBtn.BackColor = Color.FromArgb(255, 242, 204);
-            rooms_addBtn.Cursor = Cursors.Hand;
-            rooms_addBtn.FlatAppearance.BorderSize = 0;
-            rooms_addBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            rooms_addBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            rooms_addBtn.FlatStyle = FlatStyle.Flat;
-            rooms_addBtn.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rooms_addBtn.ForeColor = Color.Purple;
-            rooms_addBtn.Location = new Point(90, 347);
-            rooms_addBtn.Name = "rooms_addBtn";
-            rooms_addBtn.Size = new Size(280, 43);
-            rooms_addBtn.TabIndex = 36;
-            rooms_addBtn.Text = "Done";
-            rooms_addBtn.UseVisualStyleBackColor = false;
+            bookRoom_scheduleNow_BookBtn.BackColor = Color.FromArgb(255, 242, 204);
+            bookRoom_scheduleNow_BookBtn.Cursor = Cursors.Hand;
+            bookRoom_scheduleNow_BookBtn.FlatAppearance.BorderSize = 0;
+            bookRoom_scheduleNow_BookBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
+            bookRoom_scheduleNow_BookBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
+            bookRoom_scheduleNow_BookBtn.FlatStyle = FlatStyle.Flat;
+            bookRoom_scheduleNow_BookBtn.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookRoom_scheduleNow_BookBtn.ForeColor = Color.Purple;
+            bookRoom_scheduleNow_BookBtn.Location = new Point(90, 347);
+            bookRoom_scheduleNow_BookBtn.Name = "bookRoom_scheduleNow_BookBtn";
+            bookRoom_scheduleNow_BookBtn.Size = new Size(280, 52);
+            bookRoom_scheduleNow_BookBtn.TabIndex = 36;
+            bookRoom_scheduleNow_BookBtn.Text = "Book now";
+            bookRoom_scheduleNow_BookBtn.UseVisualStyleBackColor = false;
+            bookRoom_scheduleNow_BookBtn.Click += bookRoom_scheduleNow_BookBtn_Click;
             // 
-            // textBox4
+            // clientInfo_adress
             // 
-            textBox4.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox4.Location = new Point(542, 145);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(190, 82);
-            textBox4.TabIndex = 15;
+            clientInfo_adress.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            clientInfo_adress.Location = new Point(542, 145);
+            clientInfo_adress.Multiline = true;
+            clientInfo_adress.Name = "clientInfo_adress";
+            clientInfo_adress.Size = new Size(190, 82);
+            clientInfo_adress.TabIndex = 15;
             // 
             // label9
             // 
@@ -176,15 +177,15 @@
             label9.TabIndex = 14;
             label9.Text = "Adress:";
             // 
-            // comboBox1
+            // clientInfo_gender
             // 
-            comboBox1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female", "Other" });
-            comboBox1.Location = new Point(542, 91);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(190, 28);
-            comboBox1.TabIndex = 13;
+            clientInfo_gender.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            clientInfo_gender.FormattingEnabled = true;
+            clientInfo_gender.Items.AddRange(new object[] { "Male", "Female", "Other" });
+            clientInfo_gender.Location = new Point(542, 91);
+            clientInfo_gender.Name = "clientInfo_gender";
+            clientInfo_gender.Size = new Size(190, 28);
+            clientInfo_gender.TabIndex = 13;
             // 
             // label8
             // 
@@ -196,13 +197,13 @@
             label8.TabIndex = 12;
             label8.Text = "Gender:";
             // 
-            // textBox3
+            // clientInfo_email
             // 
-            textBox3.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox3.Location = new Point(180, 145);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(190, 27);
-            textBox3.TabIndex = 11;
+            clientInfo_email.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            clientInfo_email.Location = new Point(180, 145);
+            clientInfo_email.Name = "clientInfo_email";
+            clientInfo_email.Size = new Size(190, 27);
+            clientInfo_email.TabIndex = 11;
             // 
             // label7
             // 
@@ -214,13 +215,13 @@
             label7.TabIndex = 10;
             label7.Text = "Email Adress:";
             // 
-            // textBox2
+            // clientInfo_number
             // 
-            textBox2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox2.Location = new Point(180, 200);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(190, 27);
-            textBox2.TabIndex = 9;
+            clientInfo_number.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            clientInfo_number.Location = new Point(180, 200);
+            clientInfo_number.Name = "clientInfo_number";
+            clientInfo_number.Size = new Size(190, 27);
+            clientInfo_number.TabIndex = 9;
             // 
             // label6
             // 
@@ -232,13 +233,13 @@
             label6.TabIndex = 8;
             label6.Text = "Contact Number:";
             // 
-            // textBox1
+            // clientInfo_name
             // 
-            textBox1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(180, 92);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(190, 27);
-            textBox1.TabIndex = 7;
+            clientInfo_name.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            clientInfo_name.Location = new Point(180, 92);
+            clientInfo_name.Name = "clientInfo_name";
+            clientInfo_name.Size = new Size(190, 27);
+            clientInfo_name.TabIndex = 7;
             // 
             // label5
             // 
@@ -250,15 +251,15 @@
             label5.TabIndex = 6;
             label5.Text = "Full Name:";
             // 
-            // label4
+            // clientInfo_Id
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(180, 45);
-            label4.Name = "label4";
-            label4.Size = new Size(69, 20);
-            label4.TabIndex = 5;
-            label4.Text = "Book ID:";
+            clientInfo_Id.AutoSize = true;
+            clientInfo_Id.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            clientInfo_Id.Location = new Point(180, 45);
+            clientInfo_Id.Name = "clientInfo_Id";
+            clientInfo_Id.Size = new Size(69, 20);
+            clientInfo_Id.TabIndex = 5;
+            clientInfo_Id.Text = "Book ID:";
             // 
             // label3
             // 
@@ -296,18 +297,18 @@
         private Label Close_Button;
         private Panel panel2;
         private Label label5;
-        private Label label4;
+        private Label clientInfo_Id;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox clientInfo_email;
         private Label label7;
-        private TextBox textBox2;
+        private TextBox clientInfo_number;
         private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox4;
+        private TextBox clientInfo_name;
+        private TextBox clientInfo_adress;
         private Label label9;
-        private ComboBox comboBox1;
+        private ComboBox clientInfo_gender;
         private Label label8;
-        private RoundedButton roundedButton1;
-        private RoundedButton rooms_addBtn;
+        private RoundedButton bookRoom_scheduleNow_ClearBtn;
+        private RoundedButton bookRoom_scheduleNow_BookBtn;
     }
 }

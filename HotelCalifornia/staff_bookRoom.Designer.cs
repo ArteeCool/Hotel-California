@@ -31,8 +31,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel6 = new Panel();
-            bookRoom_To = new DateTimePicker();
-            bookRoom_From = new DateTimePicker();
+            bookRoom_ToDate = new DateTimePicker();
+            bookRoom_FromDate = new DateTimePicker();
             bookRoom_roomPrice = new Label();
             label2 = new Label();
             bookRoom_clearBtn = new RoundedButton();
@@ -68,8 +68,8 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(bookRoom_To);
-            panel6.Controls.Add(bookRoom_From);
+            panel6.Controls.Add(bookRoom_ToDate);
+            panel6.Controls.Add(bookRoom_FromDate);
             panel6.Controls.Add(bookRoom_roomPrice);
             panel6.Controls.Add(label2);
             panel6.Controls.Add(bookRoom_clearBtn);
@@ -92,25 +92,25 @@
             panel6.Size = new Size(363, 660);
             panel6.TabIndex = 5;
             // 
-            // bookRoom_To
+            // bookRoom_ToDate
             // 
-            bookRoom_To.Location = new Point(131, 308);
-            bookRoom_To.Name = "bookRoom_To";
-            bookRoom_To.Size = new Size(190, 27);
-            bookRoom_To.TabIndex = 48;
+            bookRoom_ToDate.Location = new Point(131, 308);
+            bookRoom_ToDate.Name = "bookRoom_ToDate";
+            bookRoom_ToDate.Size = new Size(190, 27);
+            bookRoom_ToDate.TabIndex = 48;
             // 
-            // bookRoom_From
+            // bookRoom_FromDate
             // 
-            bookRoom_From.Location = new Point(131, 271);
-            bookRoom_From.Name = "bookRoom_From";
-            bookRoom_From.Size = new Size(190, 27);
-            bookRoom_From.TabIndex = 47;
+            bookRoom_FromDate.Location = new Point(131, 271);
+            bookRoom_FromDate.Name = "bookRoom_FromDate";
+            bookRoom_FromDate.Size = new Size(190, 27);
+            bookRoom_FromDate.TabIndex = 47;
             // 
             // bookRoom_roomPrice
             // 
             bookRoom_roomPrice.AutoSize = true;
             bookRoom_roomPrice.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            bookRoom_roomPrice.Location = new Point(131, 191);
+            bookRoom_roomPrice.Location = new Point(146, 191);
             bookRoom_roomPrice.Name = "bookRoom_roomPrice";
             bookRoom_roomPrice.Size = new Size(68, 18);
             bookRoom_roomPrice.TabIndex = 46;
@@ -120,11 +120,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(21, 191);
+            label2.Location = new Point(7, 191);
             label2.Name = "label2";
-            label2.Size = new Size(104, 18);
+            label2.Size = new Size(133, 18);
             label2.TabIndex = 45;
-            label2.Text = "Daily Price ($):";
+            label2.Text = "Price Per Night ($):";
             // 
             // bookRoom_clearBtn
             // 
@@ -223,7 +223,7 @@
             // 
             bookRoom_roomStatus.AutoSize = true;
             bookRoom_roomStatus.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            bookRoom_roomStatus.Location = new Point(131, 152);
+            bookRoom_roomStatus.Location = new Point(146, 152);
             bookRoom_roomStatus.Name = "bookRoom_roomStatus";
             bookRoom_roomStatus.Size = new Size(68, 18);
             bookRoom_roomStatus.TabIndex = 10;
@@ -233,7 +233,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label10.Location = new Point(71, 152);
+            label10.Location = new Point(86, 152);
             label10.Name = "label10";
             label10.Size = new Size(54, 18);
             label10.TabIndex = 9;
@@ -243,7 +243,7 @@
             // 
             bookRoom_roomName.AutoSize = true;
             bookRoom_roomName.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            bookRoom_roomName.Location = new Point(131, 112);
+            bookRoom_roomName.Location = new Point(146, 112);
             bookRoom_roomName.Name = "bookRoom_roomName";
             bookRoom_roomName.Size = new Size(68, 18);
             bookRoom_roomName.TabIndex = 8;
@@ -253,7 +253,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label12.Location = new Point(27, 112);
+            label12.Location = new Point(42, 112);
             label12.Name = "label12";
             label12.Size = new Size(98, 18);
             label12.TabIndex = 7;
@@ -263,7 +263,7 @@
             // 
             bookRoom_roomType.AutoSize = true;
             bookRoom_roomType.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            bookRoom_roomType.Location = new Point(131, 68);
+            bookRoom_roomType.Location = new Point(146, 68);
             bookRoom_roomType.Name = "bookRoom_roomType";
             bookRoom_roomType.Size = new Size(68, 18);
             bookRoom_roomType.TabIndex = 6;
@@ -273,7 +273,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label8.Location = new Point(35, 68);
+            label8.Location = new Point(50, 68);
             label8.Name = "label8";
             label8.Size = new Size(90, 18);
             label8.TabIndex = 5;
@@ -283,7 +283,7 @@
             // 
             bookRoom_roomId.AutoSize = true;
             bookRoom_roomId.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
-            bookRoom_roomId.Location = new Point(131, 24);
+            bookRoom_roomId.Location = new Point(146, 24);
             bookRoom_roomId.Name = "bookRoom_roomId";
             bookRoom_roomId.Size = new Size(68, 18);
             bookRoom_roomId.TabIndex = 4;
@@ -293,7 +293,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(53, 24);
+            label4.Location = new Point(68, 24);
             label4.Name = "label4";
             label4.Size = new Size(72, 18);
             label4.TabIndex = 3;
@@ -442,7 +442,7 @@
         private Label label2;
         private PictureBox bookRoom_ImageView;
         private RoundedButton roundedButton1;
-        private DateTimePicker bookRoom_To;
-        private DateTimePicker bookRoom_From;
+        private DateTimePicker bookRoom_ToDate;
+        private DateTimePicker bookRoom_FromDate;
     }
 }

@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Text.Json.Serialization;
 
 namespace HotelCalifornia
@@ -10,16 +10,17 @@ namespace HotelCalifornia
         public String Gender { get; set; }
         public String Email { get; set; }
         public String Address { get; set; }
-        public String ContactNumber { get; set; }
+        public String Phone { get; set; }
 
         [JsonConstructor]
-        public Guest(String fullName, String gender, String email, String address, String contactNumber, String id)
+        public Guest(string fullName = null, string gender = null, string email = null,
+             string address = null, string contactNumber = null, string id = null)
         {
             FullName = fullName;
             Gender = gender;
             Email = email;
             Address = address;
-            ContactNumber = contactNumber;
+            Phone = contactNumber;
             Id = String.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
         }
 
@@ -29,4 +30,3 @@ namespace HotelCalifornia
         }
     }
 }
-*/

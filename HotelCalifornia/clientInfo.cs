@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace HotelCalifornia
 {
     public partial class clientInfo : Form
     {
-        public clientInfo()
+        private readonly BookingService _bookingService;
+        private readonly GuestService _guestService;
+        private readonly string _roomId;
+        private readonly DateTime _fromDate;
+        private readonly DateTime _toDate;
+
+        public clientInfo(BookingService bookingService, GuestService guestService, string roomId, DateTime fromDate, DateTime toDate)
         {
             InitializeComponent();
+            _bookingService = bookingService;
+            _guestService = guestService;
+            _roomId = roomId;
+            _fromDate = fromDate;
+            _toDate = toDate;
         }
 
         private void Close_Button_Click(object sender, EventArgs e)
@@ -30,6 +42,26 @@ namespace HotelCalifornia
         private void Close_Button_MouseLeave(Object sender, EventArgs e)
         {
             close.ForeColor = Color.Purple;
+        }
+
+        private void bookRoom_scheduleNow_BookBtn_Click(object sender, EventArgs e)
+        {
+            var guest = new Guest(fullName: clientInfo_name.Text,
+                gender: clientInfo_gender.Text,
+                email: clientInfo_email.Text,
+                address: clientInfo_adress.Text,
+                contactNumber: clientInfo_number.Text
+                );
+
+            string guestId = _guestService.FindOrCreateGuest(guest);
+
+            //создание брони
+            bool success = _bookingService.BookRoom(roomId: _roomId,
+                guestId: guest.Id, //ID из конструктора Guest(остальное через ID подтянется)
+                fromDate: _fromDate,
+                toDate: _toDate
+            );
+
         }
     }
 }
