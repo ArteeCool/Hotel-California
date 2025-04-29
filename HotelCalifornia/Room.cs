@@ -11,15 +11,17 @@ namespace HotelCalifornia
         public String Id { get; set; }
 
         [JsonConstructor]
-        public Room(String name, String type, Int32 price, String status, String id)
+        public Room(string name, string type, int price, string status, string id)
         {
             Name = name;
             Type = type;
             Price = price;
             Status = status;
-            
-            Id = String.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
+            Id = string.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
         }
+
+
+       public Room () { }
 
         public string GetId() => Id;
     }

@@ -17,4 +17,8 @@ public class User : IEntity
         Id = String.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
         IsAdmin = isAdmin;
     }
+
+    public User() { }
+
+    public string GetId() => Id;
 }

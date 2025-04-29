@@ -20,15 +20,19 @@ namespace HotelCalifornia
         private readonly BookingService _bookingService;
         private readonly GuestService _guestService;
         private readonly decimal _totalPrice;
-        private string _selectedRoomId; //ID вибраної кімнати
-        
+        private string _selectedRoomId;
+        private string _connectionString = "Data Source=localhost;Initial Catalog=Hotel-California;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+
+
         public staff_bookRoom()
         {
             InitializeComponent();
-            var roomRepo = new Repository<Room>(new JsonStorage<Room>(PathToRooms));
-            _roomService = new RoomService(roomRepo);
-            _guestService = new GuestService(new Repository<Guest>(new JsonStorage<Guest>(PathToGuests)));
-            _bookingService = new BookingService(new Repository<Booking>(new JsonStorage<Booking>(PathToBookings)), roomRepo);
+            var sqlStorage = new SQLRoomStorage(_connectionString);
+            var roomStorage = new Repository<Room>(sqlStorage);
+            _roomService = new RoomService(roomStorage);
+            _guestService = new GuestService(new Repository<Guest>(new SqlGuestStorage(_connectionString)));
+            var bookingRepository = new Repository<Booking>(new SqlBookingStorage(_connectionString));
+            _bookingService = new BookingService(bookingRepository, roomStorage);
             InitializeGrid();
             FillRooms();
         }

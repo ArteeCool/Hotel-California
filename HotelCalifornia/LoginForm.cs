@@ -5,20 +5,22 @@ namespace HotelCalifornia
 {
     public partial class LoginForm : Form
     {
-        private const String PathToFile = "user.json";
-        private Repository<User> _usersData = new(new JsonStorage<User>(PathToFile));
+        private string _connectionString = "Data Source=localhost;Initial Catalog=Hotel-California;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        private readonly SqlUsersStorage sqlStorage = new SqlUsersStorage("Data Source=localhost;Initial Catalog=Hotel-California;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+        private readonly Repository<User> users;
         private readonly AuthService _authService;
+
         public LoginForm()
         {
             InitializeComponent();
-            _authService = new AuthService(_usersData);
+            users = new Repository<User>(sqlStorage);
+            _authService = new AuthService(users);
         }
 
         private void close_Click(Object sender, EventArgs e)
         {
             Application.Exit();
         }
-
 
         private void login_showPassword_CheckedChanged(Object sender, EventArgs e)
         {
@@ -29,7 +31,6 @@ namespace HotelCalifornia
         {
             RegistrationForm regForm = new RegistrationForm();
             regForm.Show();
-
             this.Hide();
         }
 
@@ -46,12 +47,10 @@ namespace HotelCalifornia
                 return;
             }
 
-            // Инициализация репозиториев
-            var bookingRepository = new Repository<Booking>(new JsonStorage<Booking>("bookings.json"));
-            var roomRepository = new Repository<Room>(new JsonStorage<Room>("rooms.json"));
-            var guestRepository = new Repository<Guest>(new JsonStorage<Guest>("guests.json"));
+            var bookingRepository = new Repository<Booking>(new SqlBookingStorage(_connectionString));
+            var roomRepository = new Repository<Room>(new SQLRoomStorage(_connectionString));
+            var guestRepository = new Repository<Guest>(new SqlGuestStorage(_connectionString));
 
-            // Инициализация сервисов
             var bookingService = new BookingService(bookingRepository, roomRepository);
             var guestService = new GuestService(guestRepository);
 
@@ -80,6 +79,7 @@ namespace HotelCalifornia
         }
 
         Point lastPoint = new Point();
+
         private void LoginForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

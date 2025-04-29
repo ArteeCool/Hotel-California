@@ -20,7 +20,9 @@ namespace HotelCalifornia
         public admin_rooms()
         {
             InitializeComponent();
-            _roomService = new RoomService(new Repository<Room>(new JsonStorage<Room>(PathToFile)));
+            var sqlStorage = new SQLRoomStorage("Data Source=localhost;Initial Catalog=Hotel-California;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+            _roomService = new RoomService(new Repository<Room>(sqlStorage));
+
             InitializeGrid();
             FillRooms();
             MainGrid.CellClick += dataGridView1_CellClick!;

@@ -6,12 +6,14 @@ namespace HotelCalifornia
     public partial class RegistrationForm : Form
     {
         private const String PathToFile = "user.json";
-        private Repository<User> _usersData = new(new JsonStorage<User>(PathToFile));
+        private readonly SqlUsersStorage sqlStorage = new SqlUsersStorage("Data Source=localhost;Initial Catalog=Hotel-California;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+        private readonly Repository<User> users;
         private readonly AuthService _authService;
         public RegistrationForm()
         {
             InitializeComponent();
-            _authService = new AuthService(_usersData);
+            users = new Repository<User>(sqlStorage);
+            _authService = new AuthService(users);
         }
 
         private void close_Click(object sender, EventArgs e)
