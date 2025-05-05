@@ -1,10 +1,12 @@
 using System.Text.Json.Serialization;
-
+using System.ComponentModel.DataAnnotations;
 namespace HotelCalifornia
 {
     public class Room : IEntity
     {
+        [Required(ErrorMessage = "Назва кімнати обов'язковий")]
         public String Name { get; set; }
+        [Range(0, 10000, ErrorMessage = "Ціна має бути в межах 0–10000")]
         public Int32 Price { get; set; }
         public String Type { get; set; }
         public String Status { get; set; }

@@ -28,6 +28,9 @@ namespace HotelCalifornia
 
             if (user.Password != confirmPassword)
                 return (false, "Passwords do not match.");
+            
+            if (user.Login.Length > 50)
+                return (false, "Login is too long.");
 
             // Хеш
             user.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(user.Password);

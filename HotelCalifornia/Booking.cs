@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text.Json.Serialization;
-
+using System.ComponentModel.DataAnnotations;
 namespace HotelCalifornia
 {
     public class Booking : IEntity
@@ -8,7 +8,9 @@ namespace HotelCalifornia
         public String Id { get; set; }
         public String RoomId { get; set; }
         public String GuestId { get; set; }
+        [Required(ErrorMessage = "Дата заїзду обов'язкова")]
         public DateTime FromDate { get; set; }
+        [Required(ErrorMessage = "Дата виїзду обов'язкова")]
         public DateTime ToDate { get; set; }
         public Decimal TotalPrice { get; set; }
         public DateTime BookingDate { get; set; } = DateTime.Now;
