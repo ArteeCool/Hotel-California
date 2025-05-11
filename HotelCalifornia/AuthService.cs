@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Json;
 using System.Windows.Forms;
@@ -16,28 +17,28 @@ namespace HotelCalifornia
 
         public (bool Success, string ErrorMessage) Register(User user, string confirmPassword)
         {
-            
-            if (string.IsNullOrWhiteSpace(user.Login) || user.Login.Length < 6)
-                return (false, "Login must be at least 6 characters.");
+            var context = new ValidationContext(user);
+            var results = new List<ValidationResult>();
 
-            if (_usersRepository.Read().Any(item => item.Login.Trim() == user.Login.Trim()))
+            bool isValid = Validator.TryValidateObject(user, context, results, true);
+
+            if (!isValid)
+            {
+                var errors = results.Select(r => r.ErrorMessage).ToArray();
+                string fullErrorMessage = string.Join("\n", errors);
+                return (false, fullErrorMessage);
+            }
+
+            if (_usersRepository.Read().Any(u => u.Login.Trim().ToLowerInvariant() == user.Login.Trim().ToLowerInvariant()))
                 return (false, "Current login is taken.");
-
-            if (string.IsNullOrWhiteSpace(user.Password) || user.Password.Length < 6)
-                return (false, "Password must be at least 6 characters.");
 
             if (user.Password != confirmPassword)
                 return (false, "Passwords do not match.");
-            
-            if (user.Login.Length > 50)
-                return (false, "Login is too long.");
 
-            // Хеш
-            user.Password = BCrypt.Net.BCrypt.EnhancedHashPassword(user.Password);
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             _usersRepository.Create(user);
-            _usersRepository.Save();
 
-            return (true, string.Empty);
+            return (true, null);
         }
 
 

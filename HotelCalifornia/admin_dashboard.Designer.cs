@@ -29,23 +29,27 @@
         private void InitializeComponent()
         {
             panel7 = new Panel();
+            label1 = new Label();
+            MainGrid = new DataGridView();
             panel6 = new Panel();
             panel5 = new Panel();
             pictureBox2 = new PictureBox();
             label2 = new Label();
-            label3 = new Label();
+            totalStaff = new Label();
             panel4 = new Panel();
             pictureBox3 = new PictureBox();
             label4 = new Label();
-            label6 = new Label();
+            availableRooms = new Label();
             panel8 = new Panel();
             pictureBox4 = new PictureBox();
             label7 = new Label();
-            label8 = new Label();
+            todaysProfit = new Label();
             panel9 = new Panel();
             pictureBox5 = new PictureBox();
             label9 = new Label();
-            label10 = new Label();
+            totalProfit = new Label();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MainGrid).BeginInit();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -60,10 +64,34 @@
             // panel7
             // 
             panel7.BackColor = Color.White;
+            panel7.Controls.Add(label1);
+            panel7.Controls.Add(MainGrid);
             panel7.Location = new Point(24, 244);
             panel7.Name = "panel7";
             panel7.Size = new Size(962, 450);
             panel7.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(25, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 25);
+            label1.TabIndex = 26;
+            label1.Text = "All Rooms";
+            // 
+            // MainGrid
+            // 
+            MainGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            MainGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            MainGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MainGrid.Location = new Point(25, 59);
+            MainGrid.Name = "MainGrid";
+            MainGrid.RowHeadersWidth = 51;
+            MainGrid.Size = new Size(922, 372);
+            MainGrid.TabIndex = 27;
+            MainGrid.CellContentClick += MainGrid_CellContentClick;
             // 
             // panel6
             // 
@@ -82,7 +110,7 @@
             panel5.BackColor = Color.FromArgb(255, 242, 204);
             panel5.Controls.Add(pictureBox2);
             panel5.Controls.Add(label2);
-            panel5.Controls.Add(label3);
+            panel5.Controls.Add(totalStaff);
             panel5.Location = new Point(25, 29);
             panel5.Name = "panel5";
             panel5.Size = new Size(179, 141);
@@ -108,24 +136,24 @@
             label2.TabIndex = 14;
             label2.Text = "Total Staff";
             // 
-            // label3
+            // totalStaff
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Purple;
-            label3.Location = new Point(139, 20);
-            label3.Name = "label3";
-            label3.Size = new Size(23, 25);
-            label3.TabIndex = 15;
-            label3.Text = "0";
-            label3.TextAlign = ContentAlignment.MiddleRight;
+            totalStaff.AutoSize = true;
+            totalStaff.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            totalStaff.ForeColor = Color.Purple;
+            totalStaff.Location = new Point(139, 20);
+            totalStaff.Name = "totalStaff";
+            totalStaff.Size = new Size(23, 25);
+            totalStaff.TabIndex = 15;
+            totalStaff.Text = "0";
+            totalStaff.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(255, 242, 204);
             panel4.Controls.Add(pictureBox3);
             panel4.Controls.Add(label4);
-            panel4.Controls.Add(label6);
+            panel4.Controls.Add(availableRooms);
             panel4.Location = new Point(270, 29);
             panel4.Name = "panel4";
             panel4.Size = new Size(179, 141);
@@ -151,24 +179,24 @@
             label4.TabIndex = 16;
             label4.Text = "Available Rooms";
             // 
-            // label6
+            // availableRooms
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Purple;
-            label6.Location = new Point(139, 20);
-            label6.Name = "label6";
-            label6.Size = new Size(23, 25);
-            label6.TabIndex = 17;
-            label6.Text = "0";
-            label6.TextAlign = ContentAlignment.MiddleRight;
+            availableRooms.AutoSize = true;
+            availableRooms.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            availableRooms.ForeColor = Color.Purple;
+            availableRooms.Location = new Point(139, 20);
+            availableRooms.Name = "availableRooms";
+            availableRooms.Size = new Size(23, 25);
+            availableRooms.TabIndex = 17;
+            availableRooms.Text = "0";
+            availableRooms.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(255, 242, 204);
             panel8.Controls.Add(pictureBox4);
             panel8.Controls.Add(label7);
-            panel8.Controls.Add(label8);
+            panel8.Controls.Add(todaysProfit);
             panel8.Location = new Point(513, 29);
             panel8.Name = "panel8";
             panel8.Size = new Size(179, 141);
@@ -194,24 +222,24 @@
             label7.TabIndex = 18;
             label7.Text = "Today's Profit";
             // 
-            // label8
+            // todaysProfit
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.Purple;
-            label8.Location = new Point(120, 20);
-            label8.Name = "label8";
-            label8.Size = new Size(50, 25);
-            label8.TabIndex = 19;
-            label8.Text = "$0.0";
-            label8.TextAlign = ContentAlignment.MiddleRight;
+            todaysProfit.AutoSize = true;
+            todaysProfit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            todaysProfit.ForeColor = Color.Purple;
+            todaysProfit.Location = new Point(120, 20);
+            todaysProfit.Name = "todaysProfit";
+            todaysProfit.Size = new Size(50, 25);
+            todaysProfit.TabIndex = 19;
+            todaysProfit.Text = "$0.0";
+            todaysProfit.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(255, 242, 204);
             panel9.Controls.Add(pictureBox5);
             panel9.Controls.Add(label9);
-            panel9.Controls.Add(label10);
+            panel9.Controls.Add(totalProfit);
             panel9.Location = new Point(759, 29);
             panel9.Name = "panel9";
             panel9.Size = new Size(179, 141);
@@ -237,17 +265,17 @@
             label9.TabIndex = 20;
             label9.Text = "Total Profit";
             // 
-            // label10
+            // totalProfit
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.Purple;
-            label10.Location = new Point(120, 20);
-            label10.Name = "label10";
-            label10.Size = new Size(50, 25);
-            label10.TabIndex = 21;
-            label10.Text = "$0.0";
-            label10.TextAlign = ContentAlignment.MiddleRight;
+            totalProfit.AutoSize = true;
+            totalProfit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            totalProfit.ForeColor = Color.Purple;
+            totalProfit.Location = new Point(120, 20);
+            totalProfit.Name = "totalProfit";
+            totalProfit.Size = new Size(50, 25);
+            totalProfit.TabIndex = 21;
+            totalProfit.Text = "$0.0";
+            totalProfit.TextAlign = ContentAlignment.MiddleRight;
             // 
             // admin_dashboard
             // 
@@ -259,6 +287,9 @@
             Size = new Size(1010, 714);
             MouseDown += Admin_Dashboard_MouseDown;
             MouseMove += Admin_Dashboard_MouseMove;
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MainGrid).EndInit();
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -282,18 +313,20 @@
         private Panel panel5;
         private PictureBox pictureBox2;
         private Label label2;
-        private Label label3;
+        private Label totalStaff;
         private Panel panel4;
         private PictureBox pictureBox3;
         private Label label4;
-        private Label label6;
+        private Label availableRooms;
         private Panel panel8;
         private PictureBox pictureBox4;
         private Label label7;
-        private Label label8;
+        private Label todaysProfit;
         private Panel panel9;
         private PictureBox pictureBox5;
         private Label label9;
-        private Label label10;
+        private Label totalProfit;
+        private DataGridView MainGrid;
+        private Label label1;
     }
 }

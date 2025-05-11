@@ -45,8 +45,6 @@
             label6 = new Label();
             clientInfo_name = new TextBox();
             label5 = new Label();
-            clientInfo_Id = new Label();
-            label3 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -116,8 +114,6 @@
             panel2.Controls.Add(label6);
             panel2.Controls.Add(clientInfo_name);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(clientInfo_Id);
-            panel2.Controls.Add(label3);
             panel2.Location = new Point(16, 58);
             panel2.Name = "panel2";
             panel2.Size = new Size(787, 467);
@@ -133,7 +129,7 @@
             bookRoom_scheduleNow_ClearBtn.FlatStyle = FlatStyle.Flat;
             bookRoom_scheduleNow_ClearBtn.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bookRoom_scheduleNow_ClearBtn.ForeColor = Color.Purple;
-            bookRoom_scheduleNow_ClearBtn.Location = new Point(452, 347);
+            bookRoom_scheduleNow_ClearBtn.Location = new Point(452, 319);
             bookRoom_scheduleNow_ClearBtn.Name = "bookRoom_scheduleNow_ClearBtn";
             bookRoom_scheduleNow_ClearBtn.Size = new Size(280, 52);
             bookRoom_scheduleNow_ClearBtn.TabIndex = 37;
@@ -150,7 +146,7 @@
             bookRoom_scheduleNow_BookBtn.FlatStyle = FlatStyle.Flat;
             bookRoom_scheduleNow_BookBtn.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bookRoom_scheduleNow_BookBtn.ForeColor = Color.Purple;
-            bookRoom_scheduleNow_BookBtn.Location = new Point(90, 347);
+            bookRoom_scheduleNow_BookBtn.Location = new Point(90, 319);
             bookRoom_scheduleNow_BookBtn.Name = "bookRoom_scheduleNow_BookBtn";
             bookRoom_scheduleNow_BookBtn.Size = new Size(280, 52);
             bookRoom_scheduleNow_BookBtn.TabIndex = 36;
@@ -161,7 +157,7 @@
             // clientInfo_adress
             // 
             clientInfo_adress.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            clientInfo_adress.Location = new Point(542, 145);
+            clientInfo_adress.Location = new Point(542, 132);
             clientInfo_adress.Multiline = true;
             clientInfo_adress.Name = "clientInfo_adress";
             clientInfo_adress.Size = new Size(190, 82);
@@ -171,7 +167,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(475, 152);
+            label9.Location = new Point(475, 139);
             label9.Name = "label9";
             label9.Size = new Size(61, 20);
             label9.TabIndex = 14;
@@ -182,7 +178,7 @@
             clientInfo_gender.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
             clientInfo_gender.FormattingEnabled = true;
             clientInfo_gender.Items.AddRange(new object[] { "Male", "Female", "Other" });
-            clientInfo_gender.Location = new Point(542, 91);
+            clientInfo_gender.Location = new Point(542, 78);
             clientInfo_gender.Name = "clientInfo_gender";
             clientInfo_gender.Size = new Size(190, 28);
             clientInfo_gender.TabIndex = 13;
@@ -191,7 +187,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label8.Location = new Point(471, 95);
+            label8.Location = new Point(471, 82);
             label8.Name = "label8";
             label8.Size = new Size(65, 20);
             label8.TabIndex = 12;
@@ -200,7 +196,7 @@
             // clientInfo_email
             // 
             clientInfo_email.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            clientInfo_email.Location = new Point(180, 145);
+            clientInfo_email.Location = new Point(180, 132);
             clientInfo_email.Name = "clientInfo_email";
             clientInfo_email.Size = new Size(190, 27);
             clientInfo_email.TabIndex = 11;
@@ -209,7 +205,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label7.Location = new Point(71, 152);
+            label7.Location = new Point(71, 139);
             label7.Name = "label7";
             label7.Size = new Size(103, 20);
             label7.TabIndex = 10;
@@ -218,7 +214,7 @@
             // clientInfo_number
             // 
             clientInfo_number.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            clientInfo_number.Location = new Point(180, 200);
+            clientInfo_number.Location = new Point(180, 187);
             clientInfo_number.Name = "clientInfo_number";
             clientInfo_number.Size = new Size(190, 27);
             clientInfo_number.TabIndex = 9;
@@ -227,7 +223,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label6.Location = new Point(44, 207);
+            label6.Location = new Point(44, 194);
             label6.Name = "label6";
             label6.Size = new Size(130, 20);
             label6.TabIndex = 8;
@@ -236,7 +232,7 @@
             // clientInfo_name
             // 
             clientInfo_name.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            clientInfo_name.Location = new Point(180, 92);
+            clientInfo_name.Location = new Point(180, 79);
             clientInfo_name.Name = "clientInfo_name";
             clientInfo_name.Size = new Size(190, 27);
             clientInfo_name.TabIndex = 7;
@@ -245,31 +241,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label5.Location = new Point(90, 95);
+            label5.Location = new Point(90, 82);
             label5.Name = "label5";
             label5.Size = new Size(84, 20);
             label5.TabIndex = 6;
             label5.Text = "Full Name:";
-            // 
-            // clientInfo_Id
-            // 
-            clientInfo_Id.AutoSize = true;
-            clientInfo_Id.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            clientInfo_Id.Location = new Point(180, 45);
-            clientInfo_Id.Name = "clientInfo_Id";
-            clientInfo_Id.Size = new Size(69, 20);
-            clientInfo_Id.TabIndex = 5;
-            clientInfo_Id.Text = "Book ID:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(105, 45);
-            label3.Name = "label3";
-            label3.Size = new Size(69, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Book ID:";
             // 
             // clientInfo
             // 
@@ -297,8 +273,6 @@
         private Label Close_Button;
         private Panel panel2;
         private Label label5;
-        private Label clientInfo_Id;
-        private Label label3;
         private TextBox clientInfo_email;
         private Label label7;
         private TextBox clientInfo_number;

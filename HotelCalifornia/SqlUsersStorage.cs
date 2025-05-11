@@ -99,6 +99,7 @@ namespace HotelCalifornia
                     reader.GetString(reader.GetOrdinal("Password")),
                     reader.GetBoolean(reader.GetOrdinal("IsAdmin")) ? true : false,
                     reader.GetString(reader.GetOrdinal("Id"))
+
                 ));
             }
 

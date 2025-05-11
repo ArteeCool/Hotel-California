@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel6 = new Panel();
             bookRoom_ToDate = new DateTimePicker();
             bookRoom_FromDate = new DateTimePicker();
@@ -54,7 +54,6 @@
             bookRoom_ImageView = new PictureBox();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
-            roundedButton1 = new RoundedButton();
             MainGrid = new DataGridView();
             label3 = new Label();
             panel6.SuspendLayout();
@@ -321,14 +320,14 @@
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 242, 204);
-            dataGridViewCellStyle3.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(216, 59, 113);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 242, 204);
+            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(216, 59, 113);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(16, 20);
             dataGridView1.Name = "dataGridView1";
@@ -340,7 +339,6 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Controls.Add(roundedButton1);
             panel4.Controls.Add(MainGrid);
             panel4.Controls.Add(label3);
             panel4.Location = new Point(16, 28);
@@ -348,40 +346,23 @@
             panel4.Size = new Size(595, 379);
             panel4.TabIndex = 3;
             // 
-            // roundedButton1
-            // 
-            roundedButton1.BackColor = Color.FromArgb(255, 242, 204);
-            roundedButton1.Cursor = Cursors.Hand;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(237, 201, 175);
-            roundedButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(237, 201, 175);
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roundedButton1.ForeColor = Color.Purple;
-            roundedButton1.Location = new Point(16, 319);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(171, 48);
-            roundedButton1.TabIndex = 43;
-            roundedButton1.Text = "Check Room";
-            roundedButton1.UseVisualStyleBackColor = false;
-            // 
             // MainGrid
             // 
             MainGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 242, 204);
-            dataGridViewCellStyle4.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(216, 59, 113);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 242, 204);
+            dataGridViewCellStyle2.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(216, 59, 113);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             MainGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             MainGrid.Location = new Point(16, 52);
             MainGrid.Name = "MainGrid";
             MainGrid.RowHeadersWidth = 51;
             MainGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            MainGrid.Size = new Size(560, 261);
+            MainGrid.Size = new Size(560, 308);
             MainGrid.TabIndex = 25;
             MainGrid.CellContentClick += MainGrid_CellContentClick;
             // 
@@ -441,7 +422,6 @@
         private Label bookRoom_roomPrice;
         private Label label2;
         private PictureBox bookRoom_ImageView;
-        private RoundedButton roundedButton1;
         private DateTimePicker bookRoom_ToDate;
         private DateTimePicker bookRoom_FromDate;
     }

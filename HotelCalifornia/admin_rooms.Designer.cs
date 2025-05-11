@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label5 = new Label();
             MainGrid = new DataGridView();
@@ -39,7 +39,7 @@
             rooms_addBtn = new RoundedButton();
             rooms_importBtn = new RoundedButton();
             panel3 = new Panel();
-            pictureBox1 = new PictureBox();
+            room_pictureBox = new PictureBox();
             rooms_status = new ComboBox();
             label6 = new Label();
             rooms_price = new TextBox();
@@ -52,9 +52,9 @@
             ((System.ComponentModel.ISupportInitialize)MainGrid).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)room_pictureBox).BeginInit();
             SuspendLayout();
-            //
+            // 
             // panel1
             // 
             panel1.BackColor = Color.White;
@@ -79,14 +79,14 @@
             // MainGrid
             // 
             MainGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 242, 204);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(216, 59, 113);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 242, 204);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(216, 59, 113);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             MainGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             MainGrid.Location = new Point(27, 76);
             MainGrid.Margin = new Padding(3, 4, 3, 4);
@@ -214,25 +214,26 @@
             rooms_importBtn.TabIndex = 3;
             rooms_importBtn.Text = "Import";
             rooms_importBtn.UseVisualStyleBackColor = false;
+            rooms_importBtn.Click += rooms_importBtn_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.LightGray;
-            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(room_pictureBox);
             panel3.Location = new Point(841, 14);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(120, 129);
             panel3.TabIndex = 34;
             // 
-            // pictureBox1
+            // room_pictureBox
             // 
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 129);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            room_pictureBox.Location = new Point(0, 0);
+            room_pictureBox.Margin = new Padding(3, 4, 3, 4);
+            room_pictureBox.Name = "room_pictureBox";
+            room_pictureBox.Size = new Size(120, 129);
+            room_pictureBox.TabIndex = 2;
+            room_pictureBox.TabStop = false;
             // 
             // rooms_status
             // 
@@ -332,7 +333,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)room_pictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -352,7 +353,7 @@
         private Label label2;
         private RoundedButton rooms_importBtn;
         private Panel panel3;
-        private PictureBox pictureBox1;
+        private PictureBox room_pictureBox;
         private RoundedButton rooms_addBtn;
         private RoundedButton rooms_editBtn;
         private RoundedButton rooms_clearBtn;

@@ -1,9 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelCalifornia
 {
@@ -21,7 +18,7 @@ namespace HotelCalifornia
             using var connection = new SqlConnection(_connectionString);
             connection.Open();
 
-            var sql = "INSERT INTO Rooms (Name, Type, Price, Status, Id) VALUES (@Name, @Type, @Price, @Status, @Id)";
+            var sql = "INSERT INTO Rooms (Name, Type, Price, Status, Id, ImagePath) VALUES (@Name, @Type, @Price, @Status, @Id, @ImagePath)";
             using var command = new SqlCommand(sql, connection);
 
             command.Parameters.AddWithValue("@Name", entity.Name);
@@ -29,6 +26,7 @@ namespace HotelCalifornia
             command.Parameters.AddWithValue("@Price", entity.Price);
             command.Parameters.AddWithValue("@Status", entity.Status);
             command.Parameters.AddWithValue("@Id", entity.Id);
+            command.Parameters.AddWithValue("@ImagePath", (object)entity.ImagePath ?? DBNull.Value);
 
             command.ExecuteNonQuery();
         }
@@ -38,7 +36,7 @@ namespace HotelCalifornia
             using var connection = new SqlConnection(_connectionString);
             connection.Open();
 
-            var sql = "UPDATE Rooms SET Name = @Name, Type = @Type, Price = @Price, Status = @Status WHERE Id = @Id";
+            var sql = "UPDATE Rooms SET Name = @Name, Type = @Type, Price = @Price, Status = @Status, ImagePath = @ImagePath WHERE Id = @Id";
             using var command = new SqlCommand(sql, connection);
 
             command.Parameters.AddWithValue("@Name", entity.Name);
@@ -46,6 +44,7 @@ namespace HotelCalifornia
             command.Parameters.AddWithValue("@Price", entity.Price);
             command.Parameters.AddWithValue("@Status", entity.Status);
             command.Parameters.AddWithValue("@Id", entity.Id);
+            command.Parameters.AddWithValue("@ImagePath", (object)entity.ImagePath ?? DBNull.Value);
 
             command.ExecuteNonQuery();
         }
@@ -82,7 +81,8 @@ namespace HotelCalifornia
                     Type = reader.GetString(reader.GetOrdinal("Type")),
                     Price = reader.GetInt32(reader.GetOrdinal("Price")),
                     Status = reader.GetString(reader.GetOrdinal("Status")),
-                    Id = reader.GetString(reader.GetOrdinal("Id"))
+                    Id = reader.GetString(reader.GetOrdinal("Id")),
+                    ImagePath = reader.IsDBNull(reader.GetOrdinal("ImagePath")) ? null : reader.GetString(reader.GetOrdinal("ImagePath"))
                 };
             }
             return null;
@@ -107,7 +107,8 @@ namespace HotelCalifornia
                     Type = reader.GetString(reader.GetOrdinal("Type")),
                     Price = reader.GetInt32(reader.GetOrdinal("Price")),
                     Status = reader.GetString(reader.GetOrdinal("Status")),
-                    Id = reader.GetString(reader.GetOrdinal("Id"))
+                    Id = reader.GetString(reader.GetOrdinal("Id")),
+                    ImagePath = reader.IsDBNull(reader.GetOrdinal("ImagePath")) ? null : reader.GetString(reader.GetOrdinal("ImagePath"))
                 });
             }
 

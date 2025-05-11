@@ -16,6 +16,7 @@ namespace HotelCalifornia
         private readonly RoomService _roomService;
         private Int32 _selectedRoomIndex;
         private Boolean _isEditing;
+        private String _selectedImagePath = "";
 
         public admin_rooms()
         {
@@ -80,18 +81,40 @@ namespace HotelCalifornia
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void rooms_addBtn_Click(object sender, EventArgs e)
         {
+            var room = GetRoomInput();
+            if (room == null) return;
+
+            Console.WriteLine($"Selected image path: {_selectedImagePath}");
+            if (!string.IsNullOrEmpty(_selectedImagePath) && File.Exists(_selectedImagePath))
+            {
+                try
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
+                    string relativePath = Path.Combine("assets", fileName);
+                    string fullAssetsPath = Path.Combine(@"C:\Users\Вячеслав\source\repos\ArteeCool\Hotel-California\HotelCalifornia\assets", fileName);
+
+                    Console.WriteLine($"Copying to: {fullAssetsPath}");
+                    Directory.CreateDirectory(Path.GetDirectoryName(fullAssetsPath)!);
+                    File.Copy(_selectedImagePath, fullAssetsPath, true);
+
+                    room.ImagePath = relativePath;
+                    Console.WriteLine($"Set ImagePath: {room.ImagePath}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error copying file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
             if (_isEditing)
             {
-                
-                var updatedRoom = GetRoomInput();
-                if (updatedRoom == null) return;
-
-                if (_roomService.EditRoom(_selectedRoomIndex, updatedRoom))
+                if (_roomService.EditRoom(_selectedRoomIndex, room))
                 {
                     _isEditing = false;
                     rooms_addBtn.Text = "Add";
@@ -105,11 +128,7 @@ namespace HotelCalifornia
             }
             else
             {
-                
-                var newRoom = GetRoomInput();
-                if (newRoom == null) return;
-
-                if (_roomService.AddRoom(newRoom))
+                if (_roomService.AddRoom(room))
                 {
                     ClearFields();
                     FillRooms();
@@ -121,9 +140,10 @@ namespace HotelCalifornia
             }
         }
 
+
         private void MainGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -133,22 +153,22 @@ namespace HotelCalifornia
 
         private void rooms_roomName_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void rooms_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void rooms_price_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void rooms_status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ClearFields()
@@ -189,6 +209,19 @@ namespace HotelCalifornia
         private void rooms_clearBtn_Click(object sender, EventArgs e)
         {
             ClearFields();
+        }
+
+        private void rooms_importBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    _selectedImagePath = openFileDialog.FileName;
+                    room_pictureBox.Image = Image.FromFile(_selectedImagePath);
+                }
+            }
         }
     }
 }
