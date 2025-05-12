@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace HotelCalifornia
 {
@@ -53,8 +54,8 @@ namespace HotelCalifornia
         {
             using var connection = new SqlConnection(_connectionString);
             connection.Open();
-
-            var sql = "DELETE FROM Rooms WHERE Id = @Id";
+            
+            var sql = "DELETE FROM Rooms WHERE CAST(Id AS NVARCHAR(MAX)) = @Id";
             using var command = new SqlCommand(sql, connection);
 
             command.Parameters.AddWithValue("@Id", id);
@@ -62,12 +63,13 @@ namespace HotelCalifornia
             command.ExecuteNonQuery();
         }
 
+
         public Room? GetById(string id)
         {
             using var connection = new SqlConnection(_connectionString);
             connection.Open();
 
-            var sql = "SELECT * FROM Rooms WHERE Id = @Id";
+            var sql = "SELECT Name, Type, Price, Status, Id, CAST(ImagePath AS NVARCHAR(MAX)) AS ImagePath FROM Rooms WHERE Id = @Id COLLATE Latin1_General_CI_AS";
             using var command = new SqlCommand(sql, connection);
 
             command.Parameters.AddWithValue("@Id", id);
@@ -82,7 +84,9 @@ namespace HotelCalifornia
                     Price = reader.GetInt32(reader.GetOrdinal("Price")),
                     Status = reader.GetString(reader.GetOrdinal("Status")),
                     Id = reader.GetString(reader.GetOrdinal("Id")),
-                    ImagePath = reader.IsDBNull(reader.GetOrdinal("ImagePath")) ? null : reader.GetString(reader.GetOrdinal("ImagePath"))
+                    ImagePath = reader.IsDBNull(reader.GetOrdinal("ImagePath"))
+                        ? null
+                        : reader.GetString(reader.GetOrdinal("ImagePath"))
                 };
             }
             return null;
@@ -95,7 +99,7 @@ namespace HotelCalifornia
             using var connection = new SqlConnection(_connectionString);
             connection.Open();
 
-            var sql = "SELECT * FROM Rooms";
+            var sql = "SELECT Name, Type, Price, Status, Id, CAST(ImagePath AS NVARCHAR(MAX)) AS ImagePath FROM Rooms";
             using var command = new SqlCommand(sql, connection);
 
             using var reader = command.ExecuteReader();
@@ -108,7 +112,9 @@ namespace HotelCalifornia
                     Price = reader.GetInt32(reader.GetOrdinal("Price")),
                     Status = reader.GetString(reader.GetOrdinal("Status")),
                     Id = reader.GetString(reader.GetOrdinal("Id")),
-                    ImagePath = reader.IsDBNull(reader.GetOrdinal("ImagePath")) ? null : reader.GetString(reader.GetOrdinal("ImagePath"))
+                    ImagePath = reader.IsDBNull(reader.GetOrdinal("ImagePath"))
+                        ? null
+                        : reader.GetString(reader.GetOrdinal("ImagePath"))
                 });
             }
 
