@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -89,21 +90,20 @@ namespace HotelCalifornia
             var room = GetRoomInput();
             if (room == null) return;
 
-            Console.WriteLine($"Selected image path: {_selectedImagePath}");
+            if (!ValidateRoom(room)) return;
+
             if (!string.IsNullOrEmpty(_selectedImagePath) && File.Exists(_selectedImagePath))
             {
                 try
                 {
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
                     string relativePath = Path.Combine("assets", fileName);
-                    string fullAssetsPath = Path.Combine(@"C:\Users\Вячеслав\source\repos\ArteeCool\Hotel-California\HotelCalifornia\assets", fileName);
+                    string fullAssetsPath = Path.Combine(@"C:\Users\Вячеслав\source\repos\ArteeCool\Hotel-California\HotelCalifornia", relativePath);
 
-                    Console.WriteLine($"Copying to: {fullAssetsPath}");
                     Directory.CreateDirectory(Path.GetDirectoryName(fullAssetsPath)!);
                     File.Copy(_selectedImagePath, fullAssetsPath, true);
 
                     room.ImagePath = relativePath;
-                    Console.WriteLine($"Set ImagePath: {room.ImagePath}");
                 }
                 catch (Exception ex)
                 {
@@ -139,6 +139,7 @@ namespace HotelCalifornia
                 }
             }
         }
+
 
 
         private void MainGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -222,6 +223,21 @@ namespace HotelCalifornia
                     room_pictureBox.Image = Image.FromFile(_selectedImagePath);
                 }
             }
+        }
+
+        private bool ValidateRoom(Room room)
+        {
+            var context = new ValidationContext(room);
+            var results = new List<ValidationResult>();
+            bool isValid = Validator.TryValidateObject(room, context, results, true);
+
+            if (!isValid)
+            {
+                string errorMessages = string.Join("\n", results.Select(r => r.ErrorMessage));
+                MessageBox.Show(errorMessages, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return isValid;
         }
     }
 }
