@@ -237,6 +237,7 @@
             // 
             // rooms_status
             // 
+            rooms_status.DropDownStyle = ComboBoxStyle.DropDownList;
             rooms_status.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             rooms_status.FormattingEnabled = true;
             rooms_status.Items.AddRange(new object[] { "Active", "Inactive", "Occupied" });
@@ -299,6 +300,7 @@
             // 
             // rooms_type
             // 
+            rooms_type.DropDownStyle = ComboBoxStyle.DropDownList;
             rooms_type.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             rooms_type.FormattingEnabled = true;
             rooms_type.Items.AddRange(new object[] { "Single room", "Double room", "Triple room" });

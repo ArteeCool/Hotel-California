@@ -4,12 +4,17 @@ namespace HotelCalifornia
 {
     public class Room : IEntity
     {
-        [Required(ErrorMessage = "Назва кімнати обов'язковий")]
-        public String Name { get; set; }
-        [Range(0, 10000, ErrorMessage = "Ціна має бути в межах 0–10000")]
-        public Int32 Price { get; set; }
-        public String Type { get; set; }
-        public String Status { get; set; }
+        [Required(ErrorMessage = "Назва кімнати обов'язкова")]
+        public string Name { get; set; }
+
+        [Range(0, 1000, ErrorMessage = "Ціна має бути в межах 0–1000")]
+        public int Price { get; set; }
+
+        [Required(ErrorMessage = "Тип кімнати обов'язковий")]
+        public string Type { get; set; }
+
+        [Required(ErrorMessage = "Статус кімнати обов'язковий")]
+        public string Status { get; set; }
         public String Id { get; set; }
         public String ImagePath { get; set; }
 

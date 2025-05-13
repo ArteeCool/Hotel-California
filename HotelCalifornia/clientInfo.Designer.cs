@@ -175,6 +175,7 @@
             // 
             // clientInfo_gender
             // 
+            clientInfo_gender.DropDownStyle = ComboBoxStyle.DropDownList;
             clientInfo_gender.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
             clientInfo_gender.FormattingEnabled = true;
             clientInfo_gender.Items.AddRange(new object[] { "Male", "Female", "Other" });
