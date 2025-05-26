@@ -1,6 +1,6 @@
 # Hotel-California
 <p align="center">
-  <img src="HotelCalifornia/assets/photo_2025-03-15_13-57-30__1___3_-removebg-preview.png" alt="HotelCalifornia Interface" width="500"/>
+  <img src="HotelCalifornia/assets/photo_2025-03-15_13-57-30__1___3_-removebg-preview.png" alt="HotelCalifornia Interface" width="200"/>
 </p>
 #### Hotel-California — це веб-застосунок для управління готелями, який дозволяє адміністраторам ефективно керувати номерами та бронюваннями, а користувачам — зручно бронювати номери онлайн.
 
