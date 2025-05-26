@@ -96,3 +96,23 @@
 - C#
 
 - Sql
+---
+
+#  Як запустити цей проєкт 
+
+## Що потрібно встановити перед початком
+
+- **Visual Studio 2022**  
+  Завантажити: https://visualstudio.microsoft.com/
+
+- **SQL Server 2022 Developer**  
+  Завантажити: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+
+- **SQL Server Management Studio (SSMS)**  
+  Завантажити: https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
+---
+
+## Як завантажити проєкт
+
+1. Відкрий [репозиторій на GitHub](https://github.com/ArteeCool/Hotel-California)
+2. Натисни кнопку `Code` → `Download ZIP`
